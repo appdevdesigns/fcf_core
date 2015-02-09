@@ -4,6 +4,8 @@
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
+var AD = require('ad-utils');
+var _ = require('lodash');
 
 module.exports = {
 
@@ -11,13 +13,15 @@ module.exports = {
   autoCreatedAt:false,
   autoUpdatedAt:false,
   autoPK:false,
-  migrate:'safe',  // don't update the tables!
-
+  // migrate:'safe',  // don't update the tables!
+migrate:'alter',
 
   connection:"fcf",
 
 
   attributes: {
+
+
 
     IDPerson : {
         type : "integer",
@@ -379,8 +383,121 @@ module.exports = {
     }, 
     MemoNote : {
         type : "text"
+    },
+
+
+
+    taggedInImages: {
+        collection:'FCFActivityImages',
+        via:'taggedPeople'
+    },
+
+
+
+    displayName:function(code) {
+
+        code = code || Multilingual.languages.default();
+
+        if (code == 'en') {
+            return this.NamePersonFLEng;
+        } else {
+            return this.NamePersonFLThai;
+        }
+    },
+
+
+
+    ministryTeams:function() {
+        var dfd = AD.sal.Deferred();
+        var self = this;
+
+        var minTeams = [];  // the final results
+
+        var idMinistries = [];
+
+        async.series([
+
+            function(next) {
+                FCFMinistryTeamMember.find({IDPerson:self.IDPerson})
+                .then(function(list){
+                    list.forEach(function(entry){
+                        if (entry.IDMinistry) {
+                            idMinistries.push(entry.IDMinistry);
+                        }
+                    })
+
+                    next();
+                })
+                .fail(function(err){
+                    next(err);
+                })
+            },
+
+            function(next) {
+
+                FCFMinistry.find({IDMinistry:idMinistries})
+                .fail(function(err){
+                    next(err);
+                })
+                .then(function(list){
+                    minTeams = list;
+                    next();
+                })
+
+            }
+        ], function(err, result){
+            if (err) {
+                dfd.reject(err);
+            } else {
+                dfd.resolve(minTeams);
+            }
+        });
+
+
+        return dfd;
     }
 
-  }
+  }, 
+
+
+    /**
+     * @function Populate
+     *
+     * given an array of objects, insert an instance of person into that object
+     * as long as there is a valid foreign key (fk) reference.
+     *
+     * @codestart
+     *  var listTeams = [{ name:'a', ownerID: 1}, {name:'b', ownerID:234 }];
+     *  FCFPerson.Populate(listTeams, 'owner', 'ownerID')
+     *  .fail(function(err){
+     *      console.log(err);
+     *  })
+     *  .then(function() {
+     *      console.log(listTeams);  // now have 'owner' fields inserted
+     *  })
+     * // -> [{ name:'a', ownerID:1, 'owner':{ FCFPerson.1 }}, { name:'b', ownerID:234, 'owner':{ FCFPerson.234 }}]
+     * @codeend
+     * 
+     * if no valid person reference is found, then a null value is inserted.
+     *
+     * @param {array} list  The array of objects to join to
+     * @param {string} destKey (optional) The name of the property to store person
+     *                 instance under.
+     * @param {string} fk  (optional) the key that contains FCFPerson's pk
+     * @return {Deferred} 
+     */
+    Populate:function(list, destKey, fk) {
+        // var dfd = AD.sal.Deferred();
+
+        var pk = 'IDPerson';                // the pk value in my definition
+        fk = fk || pk;                      // the fk value in the existing list
+        destKey =  destKey || 'person';     // what to store my model instance in list object
+        var Model = FCFPerson;              // this Model
+
+
+        return ADCore.model.join({ list:list, fk:fk, pk:pk, destKey:destKey, Model:Model });
+    }
 };
+
+
 

@@ -1,33 +1,34 @@
 {
-    "name": "fcf_core",
-    "version": "0.0.0",
-    "description": "(plugin) An OpsTool plugin that contains all the core models and shared services for the FCF project",
-    "main": "module.js",
-    "directories": {
-        "test": "test"
-    },
-    "scripts": {
-        "test": "make test",
-        "postinstall": "node setup/setup.js",
-        "postupdate": "node setup/setup.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/appdevdesigns/fcf_core.git"
-    },
-    "author": "Johnny Hausman",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/appdevdesigns/fcf_core/issues"
-    },
-    "homepage": "https://github.com/appdevdesigns/fcf_core",
-    "dependencies": {
-        "ad-utils": "git://github.com/appdevdesigns/ad-utils"
-    },
-    "devDependencies": {
-        "chai": "^1.10.0",
-        "mocha": "^2.1.0",
-        "mocha-phantomjs": "^3.5.2",
-        "phantomjs": "^1.9.13"
-    }
+  "name": "fcf_core",
+  "version": "0.0.0",
+  "description": "(plugin) An OpsTool plugin that contains all the core models and shared services for the FCF project",
+  "main": "module.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test",
+    "postinstall": "node setup/setup.js",
+    "postupdate": "node setup/setup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/appdevdesigns/fcf_core.git"
+  },
+  "author": "Johnny Hausman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/appdevdesigns/fcf_core/issues"
+  },
+  "homepage": "https://github.com/appdevdesigns/fcf_core",
+  "dependencies": {
+    "ad-utils": "git://github.com/appdevdesigns/ad-utils",
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0",
+    "mocha-phantomjs": "^3.5.2",
+    "phantomjs": "^1.9.13"
+  }
 }

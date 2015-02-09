@@ -4,6 +4,7 @@
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
+var AD = require('ad-utils');
 
 module.exports = {
 
@@ -61,6 +62,39 @@ module.exports = {
         MinistryDisplayName : {
             type : "string",
             size : 243
+        },
+
+
+        // @hasMany Activities (FCFActivity)
+        activities:{
+            collection:'FCFActivity',
+            via: 'team'
+        },
+
+
+        populateOwner:function() {
+
+            var dfd = AD.sal.Deferred();
+            var self = this;
+
+            this.personResponsible = null;
+            if (this.IDPersonResponsible) {
+
+                FCFPerson.findOne({IDPerson: this.IDPersonResponsible})
+                .fail(function(err){
+                    dfd.reject(err);
+                })
+                .then(function(person) {
+                    self.personResponsible = person;
+                    dfd.resolve();
+                })
+
+            } else {
+                dfd.resolve();
+            }
+
+            return dfd;
+
         }
 
     }

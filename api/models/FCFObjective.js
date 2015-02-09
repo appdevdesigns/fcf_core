@@ -11,8 +11,8 @@ module.exports = {
   autoCreatedAt:false,
   autoUpdatedAt:false,
   autoPK:false,
-  migrate:'safe',  // don't update the tables!
-
+  // migrate:'safe',  // don't update the tables!
+migrate:'alter',
 
   connection:"fcf",
 
@@ -43,6 +43,26 @@ module.exports = {
     ObjectiveDescEng : {
         type : "string",
         size : 250
+    },
+
+
+    activities: {
+      collection:'FCFActivity',
+      via:'objectives'
+    },
+
+
+
+
+    description:function(code) {
+
+        code = code || Multilingual.languages.default();
+
+        if (code == 'en') {
+            return this.ObjectiveDescEng;
+        } else {
+            return this.ObjectiveDescThai;
+        }
     }
 
   }
