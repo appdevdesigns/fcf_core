@@ -7,7 +7,7 @@
 
 module.exports = {
 
-  connection:"mysql",
+  // connection:"mysql",
   // migrate:'safe',
 migrate:'alter',
 
