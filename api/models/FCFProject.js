@@ -1,5 +1,5 @@
 /**
-* Projec.js
+* FCFProjects.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -17,6 +17,7 @@ module.exports = {
     connection:"fcf",
 
 
+
     attributes: {
 
         IDProject : {
@@ -24,182 +25,250 @@ module.exports = {
             size : 5,
             primaryKey : true
         }, 
+
         IDGroup : {
             type : "string",
             size : 10
         }, 
+
         codeProjectStatus : {
             type : "string",
             size : 5
         }, 
-        'xxActive (TF)' : {
+
+        "xxActive (TF)" : {
             type : "integer",
             size : 1
         }, 
+
         codeFieldOffice : {
             type : "string",
             size : 3
         }, 
+
         IDPersonLeading : {
             type : "integer",
             size : 10
         }, 
+
         LeaderLookUp : {
             type : "integer",
             size : 10
         }, 
-        'xProject Leader Email (Copy)' : {
-            type : "string",
-            size : 255
-        }, 
-        'Project Leader Email' : {
-            type : "string",
-            size : 255
-        }, 
+
         IDAcctCodeCostShare : {
-            type : "integer",
+            type : "?smallint?",
             size : 5
         }, 
+
         ProjectNameNat : {
             type : "string",
             size : 100
         }, 
+
         ProjectNameEng : {
             type : "string",
             size : 100
         }, 
-        'xxFCF Project Name' : {
-            type : "string",
-            size : 255
-        }, 
+
         ProjectDescriptionEng : {
             type : "text"
         }, 
+
         ProjectDescriptionNat : {
             type : "text"
         }, 
+
         ProjectRationalNat : {
             type : "text"
         }, 
+
         ProjectRationalEng : {
             type : "text"
         }, 
+
         ProjectObjectivesNat : {
-            type : "string",
-            size : 250
+            type : "text"
         }, 
+
         ProjectObjectivesEng : {
-            type : "string",
-            size : 250
+            type : "text"
         }, 
-        TargetBeneficiaries : {
-            type : "string",
-            size : 250
+
+        ProjectOperationPlanNat : {
+            type : "text"
         }, 
+
+        ProjectOperationPlanEng : {
+            type : "text"
+        }, 
+
         ProjectPlan : {
             type : "text"
         }, 
+
         ProjectDateStart : {
             type : "datetime"
         }, 
+
         ProjectDateEnd : {
             type : "datetime"
         }, 
+
         BudgetSummary : {
             type : "text"
         }, 
-        ProjectEvaluation : {
+
+        ProjectEvaluationEng : {
             type : "text"
         }, 
-        BenefitToSociety : {
-            type : "string",
-            size : 250
+
+        ProjectEvaluationNat : {
+            type : "text"
         }, 
+
+        BenefitToSocietyNat : {
+            type : "text"
+        }, 
+
+        BenefitToSocietyEng : {
+            type : "text"
+        }, 
+
+        "xProject Leader Email (Copy)" : {
+            type : "string",
+            size : 255
+        }, 
+
+        "xxFCF Project Name" : {
+            type : "string",
+            size : 255
+        }, 
+
+        "x-Project Leader Email" : {
+            type : "string",
+            size : 255
+        }, 
+
         flgIncludeInDirectory : {
             type : "integer",
             size : 1
         }, 
-        'xxxinclude in directory' : {
+
+        "xxxinclude in directory" : {
             type : "integer",
             size : 1
         }, 
-        'Visa Letter Statement' : {
+
+        "Visa Letter Statement" : {
             type : "text"
         }, 
+
         Field4 : {
             type : "float"
         }, 
+
         Field5 : {
             type : "float"
         }, 
-        'Active Volunteers (Num)' : {
+
+        "Active Volunteers (Num)" : {
             type : "float"
         }, 
-        'Size ((millions/year)*10)' : {
+
+        "Size ((millions/year)*10)" : {
             type : "float"
         }, 
-        'Monthly Cost Share Amount' : {
+
+        "Monthly Cost Share Amount" : {
             type : "float"
         }, 
-        'Amount Waived' : {
+
+        CostShareAmountPrj : {
+            type : "integer",
+            size : 10
+        }, 
+
+        "Monthly Cost Share Amount Waived" : {
             type : "float"
         }, 
-        'Cost Share Account' : {
-            type : "float"
+
+        "Monthly Cost Share Account" : {
+            type : "string",
+            size : 255
         }, 
+
         "1 Year MOU established on:" : {
             type : "string",
             size : 255
         }, 
-        'logo (max 100x100)' : {
+
+        "logo (max 100x100)" : {
             type : "string",
             size : 255
         }, 
+
         ID1 : {
             type : "integer",
             size : 10
         }, 
+
         ID : {
             type : "float"
         }, 
+
         ProjectContext : {
             type : "text"
         }, 
+
         ProjectVision : {
             type : "string",
             size : 250
         }, 
+
         ProjectGuidingPrincipels : {
             type : "string",
             size : 50
         }, 
+
         ProjectMissionStatesment : {
             type : "string",
             size : 250
         }, 
+
         ProjectFocus : {
             type : "string",
             size : 250
         }, 
+
         ProjectTransformationStatement : {
             type : "string",
             size : 50
         }, 
-        ProjectTargetBeneficiaries : {
+
+        ProjectTargetBeneficiariesEng : {
             type : "text"
         }, 
+
+        ProjectTargetBeneficiariesNat : {
+            type : "text"
+        }, 
+
         ProjectTeamOverview : {
             type : "text"
         }, 
+
         Project3YearPlan : {
             type : "text"
         }, 
+
         ProjectTrainingPlan : {
             type : "text"
         }, 
+
         FundRaisingPlan : {
             type : "text"
-        },
+        }, 
 
 
         displayName:function(code) {
