@@ -1,388 +1,605 @@
 /**
-* Person.js
+* FCFPerson.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
+
 var AD = require('ad-utils');
 var _ = require('lodash');
 
 module.exports = {
 
-  tableName:"tblPersons",
+  tableName:"tblpersons",
   autoCreatedAt:false,
   autoUpdatedAt:false,
   autoPK:false,
-  // migrate:'safe',  // don't update the tables!
-migrate:'alter',
+  migrate:'safe',  // don't update the tables!
+
 
   connection:"fcf",
 
 
+
   attributes: {
-
-
 
     IDPerson : {
         type : "integer",
         size : 10,
         primaryKey : true
     }, 
-    SortNo : {
+
+    flgNewImportLastBatch : {
         type : "integer",
+        size : 1
+    }, 
+
+    flgSelectMe : {
+        type : "integer",
+        size : 1
+    }, 
+
+    SortNo : {
+        type : "?smallint?",
         size : 5
     }, 
+
     codeWorkFlowPhase : {
         type : "string",
         size : 5
     }, 
+
     codeWorkPermitPhase : {
         type : "string",
         size : 5
     }, 
+
     codeVisaPhase : {
         type : "string",
         size : 5
     }, 
+
     codeVisaType : {
         type : "string",
         size : 5
     }, 
+
+    codeVisaCategory : {
+        type : "string",
+        size : 5
+    }, 
+
     codeWorkPermitProcessNow : {
         type : "string",
         size : 5
     }, 
+
     IDProjectMain : {
         type : "string",
         size : 5
     }, 
+
     IDFamily : {
         type : "integer",
         size : 10
     }, 
+
     codeFamilyRelationship : {
         type : "string",
         size : 5
     }, 
+
     flgIsThai : {
         type : "integer",
         size : 1
     }, 
+
     DateBirth : {
         type : "datetime"
     }, 
+
     NameLastEng : {
         type : "string",
         size : 35
     }, 
+
     NameFirstEng : {
         type : "string",
         size : 25
     }, 
+
     NamePreferredEng : {
         type : "string",
         size : 15
     }, 
+
     NameMiddleEng : {
         type : "string",
         size : 25
     }, 
+
     NameTitleEng : {
         type : "string",
         size : 10
     }, 
-    NameThaiFull2 : {
-        type : "string",
-        size : 50
-    }, 
+
     NameTitleThai : {
         type : "string",
         size : 15
     }, 
+
     NameFirstThai : {
         type : "string",
         size : 35
     }, 
+
     NameMiddleThai : {
         type : "string",
         size : 25
     }, 
+
     NameLastThai : {
         type : "string",
         size : 35
     }, 
+
     NamePreferredThai : {
         type : "string",
         size : 15
     }, 
+
     NamePersonFLEng : {
         type : "string",
         size : 243
     }, 
+
     NamePersonLFEng : {
         type : "string",
         size : 243
     }, 
+
     NamePersonFLThai : {
         type : "string",
         size : 243
     }, 
+
     NamePersonLFThai : {
         type : "string",
         size : 243
     }, 
+
     codeGender : {
         type : "string",
         size : 1
     }, 
+
+    PlaceOfBirth : {
+        type : "string",
+        size : 255
+    }, 
+
+    codeNationality : {
+        type : "string",
+        size : 3
+    }, 
+
     codeMaritalStatus : {
         type : "string",
         size : 2
     }, 
+
     CollegeDegree : {
         type : "string",
         size : 50
     }, 
+
+    codeEducationHighest : {
+        type : "string",
+        size : 6
+    }, 
+
     CollegeDescription : {
         type : "string",
         size : 50
     }, 
+
     EducationSchool : {
         type : "string",
         size : 50
     }, 
+
     EducationYearGrad : {
         type : "string",
         size : 10
     }, 
+
     EducationField : {
         type : "string",
         size : 50
     }, 
+
     EducationCountry : {
         type : "string",
         size : 50
     }, 
+
     LatestJob : {
         type : "string",
         size : 150
     }, 
+
     LastJobOccupation : {
         type : "string",
         size : 50
     }, 
+
     LastJobOccupationThai : {
         type : "string",
         size : 50
     }, 
+
     LastJobLocationName : {
         type : "string",
         size : 50
     }, 
+
     LastJobCountry : {
         type : "string",
         size : 50
     }, 
+
     LastJobPeriodOfEmployment : {
         type : "string",
         size : 50
     }, 
+
     LastJobReasonForResignation : {
         type : "string",
         size : 50
     }, 
+
     JobTitle : {
         type : "string",
         size : 50
     }, 
+
     JobDescSimple : {
         type : "string",
         size : 255
     }, 
+
     WorkAddress : {
         type : "string",
         size : 50
     }, 
-    'WP Length (90,180,365)' : {
-        type : "float"
-    }, 
+
     WPLength : {
         type : "integer",
         size : 10
     }, 
+
     flgDonationWaived : {
         type : "integer",
         size : 1
     }, 
+
     IDGroupSending : {
         type : "string",
         size : 10
     }, 
+
     IDGroupLocalOversite : {
         type : "string",
         size : 10
     }, 
+
     PPNumber : {
         type : "string",
         size : 25
     }, 
+
     PPCountryText : {
         type : "string",
         size : 25
     }, 
+
     codePPCountry : {
         type : "string",
         size : 10
     }, 
+
     PPIssuedWhere : {
         type : "string",
         size : 50
     }, 
+
+    PPIssuedWhen : {
+        type : "datetime"
+    }, 
+
+    PPDateExpire : {
+        type : "datetime"
+    }, 
+
     VisaDateExpire : {
         type : "datetime"
     }, 
+
     WPNumber : {
         type : "string",
         size : 25
     }, 
+
     WPIssuedDate : {
         type : "datetime"
     }, 
+
     WPExpireDate : {
         type : "datetime"
     }, 
+
     WPProvince : {
         type : "string",
         size : 25
     }, 
+
     codeFieldOffice : {
         type : "string",
         size : 3
     }, 
+
     LocationEmployedThai : {
         type : "string",
         size : 50
     }, 
+
     DateArrivalTarget : {
         type : "datetime"
     }, 
+
+    DateArrived : {
+        type : "datetime"
+    }, 
+
+    ArrivedFrom : {
+        type : "string",
+        size : 255
+    }, 
+
+    ArrivedBy : {
+        type : "string",
+        size : 255
+    }, 
+
+    DepartureCardNo : {
+        type : "string",
+        size : 10
+    }, 
+
+    ArrivalPort : {
+        type : "string",
+        size : 50
+    }, 
+
     DateDepartTarget : {
-        type : "string",
-        size : 25
+        type : "datetime"
     }, 
+
     DateExit : {
-        type : "string",
-        size : 25
+        type : "datetime"
     }, 
+
     DateLastCPTraining : {
         type : "datetime"
     }, 
-    'e-mail address' : {
-        type : "string",
-        size : 25
-    }, 
-    Note : {
-        type : "string",
-        size : 255
-    }, 
-    Status : {
-        type : "string",
-        size : 255
-    }, 
-    Project : {
-        type : "string",
-        size : 255
-    }, 
+
     Tel : {
         type : "string",
         size : 25
     }, 
-    '90 Days Check in' : {
+
+    "e-mail address" : {
         type : "string",
-        size : 25
+        size : 100
     }, 
-    'Work Schedule & Address' : {
+
+    Note : {
         type : "string",
         size : 255
     }, 
+
+    Status : {
+        type : "string",
+        size : 255
+    }, 
+
+    Project : {
+        type : "string",
+        size : 255
+    }, 
+
+    DateNext90Days : {
+        type : "datetime"
+    }, 
+
+    "Work Schedule & Address" : {
+        type : "string",
+        size : 255
+    }, 
+
     codeProjectAppliedFor : {
         type : "string",
         size : 255
     }, 
-    'Application Datestamp' : {
-        type : "string",
-        size : 25
+
+    "Application Datestamp" : {
+        type : "datetime"
     }, 
-    PIANum : {
-        type : "string",
-        size : 25
-    }, 
-    FCLNum : {
-        type : "string",
-        size : 25
-    }, 
-    '3Num' : {
-        type : "string",
-        size : 25
-    }, 
-    '4Num' : {
-        type : "string",
-        size : 25
-    }, 
-    'Total Visas with WP (Including Followers)' : {
+
+    "Total Visas with WP (Including Followers)" : {
         type : "float"
     }, 
-    'Donation Waved' : {
-        type : "float"
+
+    "xxxDonation Waved" : {
+        type : "integer",
+        size : 10
     }, 
-    DonationWiavedAmount : {
-        type : "float",
-        // size : 19,4
+
+    "Cost Share Amount" : {
+        type : "integer",
+        size : 10
     }, 
-    'Cost Share Statement' : {
+
+    "Cost Share Waived" : {
+        type : "integer",
+        size : 10
+    }, 
+
+    "Cost Share Account" : {
         type : "string",
-        size : 255
+        size : 6
     }, 
-    'Cost Share' : {
-        type : "float"
-    }, 
-    'Staff Directory' : {
+
+    "Staff Directory" : {
         type : "integer",
         size : 1
     }, 
+
     flgIncludeInStaffDirectory : {
         type : "integer",
         size : 1
     }, 
+
     Organization : {
         type : "string",
         size : 255
     }, 
+
     IDDBF : {
         type : "integer",
         size : 10
     }, 
+
     IDPersonOld : {
         type : "float"
     }, 
+
     NameThaiFull1 : {
         type : "string",
         size : 55
     }, 
+
     codePersonStatus : {
         type : "string",
         size : 5
     }, 
+
     PositionThaiStaff : {
         type : "string",
         size : 200
     }, 
+
     IDThaiGovtCard : {
         type : "string",
         size : 20
     }, 
+
     MemoNote : {
         type : "text"
+    }, 
+
+    MailingAddress : {
+        type : "string",
+        size : 255
+    }, 
+
+    PhysicalAddress : {
+        type : "string",
+        size : 255
+    }, 
+
+    LanguageSpoken : {
+        type : "string",
+        size : 100
+    }, 
+
+    Denomination : {
+        type : "string",
+        size : 55
+    }, 
+
+    MinistryContact : {
+        type : "string",
+        size : 55
+    }, 
+
+    BackGroundCheck : {
+        type : "integer",
+        size : 1
+    }, 
+
+    SA : {
+        type : "string",
+        size : 100
+    }, 
+
+    SAContact : {
+        type : "string",
+        size : 55
+    }, 
+
+    SAEmail : {
+        type : "string",
+        size : 55
+    }, 
+
+    SAPhone : {
+        type : "string",
+        size : 55
+    }, 
+
+    SAAddress : {
+        type : "string",
+        size : 255
+    }, 
+
+    STTripDetails : {
+        type : "string",
+        size : 255
+    }, 
+
+    isMoreThan15Days : {
+        type : "integer",
+        size : 1
+    }, 
+
+    "x-PIANum" : {
+        type : "string",
+        size : 25
+    }, 
+
+    "x-FCLNum" : {
+        type : "string",
+        size : 25
+    }, 
+
+    "x-3Num" : {
+        type : "string",
+        size : 25
+    }, 
+
+    "x-4Num" : {
+        type : "string",
+        size : 25
+    }, 
+
+    AppDatestamp : {
+        type : "datetime"
+    }, 
+
+    NamePersonFMLEng : {
+        type : "string",
+        size : 243
     },
 
 
@@ -408,6 +625,7 @@ migrate:'alter',
 
 
     ministryTeams:function() {
+// AD.log('   ministryTeams():');
         var dfd = AD.sal.Deferred();
         var self = this;
 
@@ -418,8 +636,10 @@ migrate:'alter',
         async.series([
 
             function(next) {
+// AD.log('   ... FCFMinistryTeamMember.find()');
                 FCFMinistryTeamMember.find({IDPerson:self.IDPerson})
                 .then(function(list){
+
                     list.forEach(function(entry){
                         if (entry.IDMinistry) {
                             idMinistries.push(entry.IDMinistry);
@@ -434,7 +654,7 @@ migrate:'alter',
             },
 
             function(next) {
-
+// AD.log('   ... FCFMinistry.find()');
                 FCFMinistry.find({IDMinistry:idMinistries})
                 .fail(function(err){
                     next(err);
@@ -457,47 +677,7 @@ migrate:'alter',
         return dfd;
     }
 
-  }, 
 
-
-    /**
-     * @function Populate
-     *
-     * given an array of objects, insert an instance of person into that object
-     * as long as there is a valid foreign key (fk) reference.
-     *
-     * @codestart
-     *  var listTeams = [{ name:'a', ownerID: 1}, {name:'b', ownerID:234 }];
-     *  FCFPerson.Populate(listTeams, 'owner', 'ownerID')
-     *  .fail(function(err){
-     *      console.log(err);
-     *  })
-     *  .then(function() {
-     *      console.log(listTeams);  // now have 'owner' fields inserted
-     *  })
-     * // -> [{ name:'a', ownerID:1, 'owner':{ FCFPerson.1 }}, { name:'b', ownerID:234, 'owner':{ FCFPerson.234 }}]
-     * @codeend
-     * 
-     * if no valid person reference is found, then a null value is inserted.
-     *
-     * @param {array} list  The array of objects to join to
-     * @param {string} destKey (optional) The name of the property to store person
-     *                 instance under.
-     * @param {string} fk  (optional) the key that contains FCFPerson's pk
-     * @return {Deferred} 
-     */
-    Populate:function(list, destKey, fk) {
-        // var dfd = AD.sal.Deferred();
-
-        var pk = 'IDPerson';                // the pk value in my definition
-        fk = fk || pk;                      // the fk value in the existing list
-        destKey =  destKey || 'person';     // what to store my model instance in list object
-        var Model = FCFPerson;              // this Model
-
-
-        return ADCore.model.join({ list:list, fk:fk, pk:pk, destKey:destKey, Model:Model });
-    }
+  }
 };
-
-
 

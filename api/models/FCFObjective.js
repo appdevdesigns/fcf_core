@@ -7,7 +7,7 @@
 
 module.exports = {
 
-  tableName:"tblObjectives",
+  tableName:"tblobjectives",
   autoCreatedAt:false,
   autoUpdatedAt:false,
   autoPK:false,

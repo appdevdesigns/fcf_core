@@ -12,7 +12,7 @@ module.exports = {
     // connection:"mysql",
     connection:'fcf',
 
-migrate:'alter',  // don't update the tables!
+// migrate:'alter',  // don't update the tables!
 
     attributes: {
 

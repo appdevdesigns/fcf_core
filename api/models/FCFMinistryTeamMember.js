@@ -7,7 +7,7 @@
 
 module.exports = {
 
-    tableName:"tblMinistryTeamMembers",
+    tableName:"tblministryteammembers",
     autoCreatedAt:false,
     autoUpdatedAt:false,
     autoPK:false,

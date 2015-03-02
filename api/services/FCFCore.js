@@ -2,6 +2,7 @@ var path = require('path');
 // var $ = require('jquery-deferred');
 var AD = require('ad-utils');
 var _ = require('lodash');
+var fs = require('fs');
 
 
 
@@ -61,6 +62,73 @@ module.exports= {
 
 
 
+        files:{
+
+
+            move:function(fromA, toB) {
+                var dfd = AD.sal.Deferred();
+                fs.rename(fromA, toB, function(err){
+                    if (err) {
+                        dfd.reject(err);
+                    } else {
+                        dfd.resolve();
+                    }
+
+                });
+                return dfd;
+            },
+
+            images:{
+
+                // move a temp file to an activity image
+                tempToActivity:function(tempName, activityName) {
+                    
+                    var pathTempFile = FCFCore.paths.images.temp(tempName);
+                    var pathSavedFile = FCFCore.paths.images.activities(activityName);
+                    return FCFCore.files.move(pathTempFile, pathSavedFile);
+
+                }
+            }
+        },
+
+
+
+        /**
+         * paths
+         *
+         * The official place to get paths for resources on our filesystem:
+         */
+         paths : {
+
+            /* 
+             * forURL
+             * 
+             * convert one of our generated paths into a valid URL for that 
+             * resource.
+             */
+            forURL: function( curr ) {
+
+                return curr.replace(path.join(process.cwd(), 'assets'), '');
+            },
+
+            /*
+             *
+             */
+            images: {
+
+                activities: function(name) {
+                    return path.join(process.cwd(), 'assets', 'data', 'fcf', 'images', 'activities', name)
+                },
+
+                temp: function(name) {
+
+                    return path.join(process.cwd(), 'assets', 'data', 'fcf', 'images', 'temp', name)
+                }
+
+            }
+         },
+
+
         /**
          * @function personForGUID
          *
@@ -100,7 +168,7 @@ module.exports= {
                 guid = sails.config.fcfcore.test.user;
             }
 
-
+AD.log('... person for guid:', guid);
             return FCFCore.personsForGUID({guid:guid});
         },
 
@@ -111,6 +179,8 @@ module.exports= {
 
             var options = FCFCore._resolveOptionsByGUID(opt);
 
+            AD.log('... personsForGUID(): options:', options);
+
             GUID2Person.find({guid:options.guid})
             .then(function(list){
 
@@ -118,17 +188,28 @@ module.exports= {
                     dfd.resolve(null);
                 } else {
 
-                    FCFPerson.findOne({IDPerson:list[0].person})
+                    var guid = list[0].guid;
+                    var personID = list[0].person;
+
+                    AD.log('... guid2person entry found: ['+guid+'] -> ['+personID+']');
+
+                    FCFPerson.findOne({IDPerson:personID})
                     .then(function(person){
+
+                        if (!person) {
+                            AD.log('... *** no person found for IDPerson:'+personID);
+                        }
                         dfd.resolve(person);
                     })
                     .catch(function(err){
+                        AD.log.error('... error: FCFPerson.findOne() failed:', err);
                         dfd.reject(err);
                     })
                     
                 }
             })
             .catch(function(err) {
+                AD.log.error('... error: GUID2Person.find() failed:', err);
                 dfd.reject(err);
             })
 
