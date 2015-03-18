@@ -656,6 +656,7 @@ module.exports = {
             function(next) {
 // AD.log('   ... FCFMinistry.find()');
                 FCFMinistry.find({IDMinistry:idMinistries})
+                // .populate('IDProject')
                 .fail(function(err){
                     next(err);
                 })

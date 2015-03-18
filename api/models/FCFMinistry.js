@@ -29,10 +29,10 @@ module.exports = {
             type : "string",
             size : 5
         }, 
-        IDProject : {
-            type : "string",
-            size : 5
-        }, 
+        // IDProject : {
+        //     type : "string",
+        //     size : 5
+        // }, 
         NameMinistryNat : {
             type : "string",
             size : 50
@@ -64,6 +64,12 @@ module.exports = {
             size : 243
         },
 
+
+        // @hasOne Project (FCFProject)
+        IDProject:{
+            model:'FCFProject'
+        },
+        
 
         // @hasMany Activities (FCFActivity)
         activities:{

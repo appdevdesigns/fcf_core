@@ -58,6 +58,43 @@ module.exports = {
         },
 
 
+        imageURL: function() {
+
+            if (this.default_image) {
+                return FCFCore.paths.forURL( FCFCore.paths.images.activities(this.default_image))
+            } else {
+                return '/data/fcf/images/activities/placeholder_activity.jpg';
+            }
+        },
+
+
+        toClient: function(langCode) {
+
+            var obj = {};
+            obj.id = this.id;
+            obj.date_start = this.date_start;
+            obj.date_end = this.date_end;
+            obj.default_image = this.default_image;
+
+            obj.imageURL = this.imageURL();
+
+            obj.team = this.team;
+            obj.activity_name = this.activity_name;
+
+            obj.createdBy = null;
+            if (this.createdBy) {
+                obj.createdBy = this.createdBy.displayName ? this.createdBy.displayName(langCode) : this.createdBy;
+            }
+
+            obj.approvedBy = null;
+            if (this.approvedBy) {
+                obj.approvedBy = this.approvedBy.displayName ? this.approvedBy.displayName(langCode): this.approvedBy;
+            }
+            
+            return obj;
+        },
+
+
         // .translate( langCode ) can translate an instance of FCFActivity  
         //                        with the proper labels.
         translate:function(code) {

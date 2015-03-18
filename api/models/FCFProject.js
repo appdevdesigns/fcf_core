@@ -271,6 +271,13 @@ module.exports = {
         }, 
 
 
+
+        teams: {
+            collection:'FCFMinistry',
+            via:'IDProject'
+        },
+
+
         displayName:function(code) {
 
             code = code || Multilingual.languages.default();
