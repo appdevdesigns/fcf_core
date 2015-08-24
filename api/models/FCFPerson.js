@@ -648,7 +648,7 @@ module.exports = {
 
                     next();
                 })
-                .fail(function(err){
+                .catch(function(err){
                     next(err);
                 })
             },

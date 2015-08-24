@@ -16,7 +16,7 @@ module.exports = {
 
     attributes: {
 
-        date_start : { type: 'date' },
+        date_start : { type: 'date', required:true },
 
         date_end : { type: 'date' },
 
@@ -24,7 +24,8 @@ module.exports = {
 
         // @hasOne Team (FCFMinistry)
         team:{
-            model:'FCFMinistry'
+            model:'FCFMinistry',
+            required: true
         },
 
         createdBy: {

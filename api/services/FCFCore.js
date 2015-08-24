@@ -158,6 +158,7 @@ module.exports= {
             var user = ADCore.user.current(req);
 
             var guid = user.GUID();
+AD.log('<yellow>... initial guid:'+guid+'</yellow>');
 
             // if sails.config.fcfcore.test.user  is set:
             // then use that for our GUID instead of the current session.
