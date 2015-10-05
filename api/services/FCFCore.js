@@ -120,6 +120,10 @@ module.exports= {
                     return path.join(process.cwd(), 'assets', 'data', 'fcf', 'images', 'activities', name)
                 },
 
+                avatars: function(name) {
+                    return path.join(process.cwd(), 'assets', 'data', 'fcf', 'images', 'avatars', name)
+                },
+
                 temp: function(name) {
 
                     return path.join(process.cwd(), 'assets', 'data', 'fcf', 'images', 'temp', name)

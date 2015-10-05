@@ -624,6 +624,12 @@ module.exports = {
 
 
 
+    getID: function() {
+        return this.IDPerson;
+    },
+
+
+
     ministryTeams:function() {
 // AD.log('   ministryTeams():');
         var dfd = AD.sal.Deferred();
