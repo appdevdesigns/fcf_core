@@ -7,7 +7,7 @@
 
 module.exports = {
 
-    tableName:"tblministryteammembers",
+    tableName:"tblMinistryTeamMembers",
     autoCreatedAt:false,
     autoUpdatedAt:false,
     autoPK:false,
@@ -40,9 +40,9 @@ module.exports = {
             type : "integer",
             size : 10
         }, 
-        codeServiceRole : {
-            type : "text"
-        }, 
+        // codeServiceRole : {
+        //     type : "text"
+        // }, 
         DateStartHelps : {
             type : "datetime"
         }, 

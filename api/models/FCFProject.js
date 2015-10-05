@@ -7,7 +7,7 @@
 
 module.exports = {
 
-    tableName:"tblprojects",
+    tableName:"tblProjects",
     autoCreatedAt:false,
     autoUpdatedAt:false,
     autoPK:false,

@@ -10,7 +10,7 @@ var _ = require('lodash');
 
 module.exports = {
 
-  tableName:"tblpersons",
+  tableName:"tblPersons",
   autoCreatedAt:false,
   autoUpdatedAt:false,
   autoPK:false,
@@ -25,22 +25,27 @@ module.exports = {
 
     IDPerson : {
         type : "integer",
-        size : 10,
+        size : 4,
         primaryKey : true
     }, 
 
     flgNewImportLastBatch : {
-        type : "integer",
-        size : 1
+        type : "string",
+        size : 5
     }, 
 
     flgSelectMe : {
-        type : "integer",
-        size : 1
+        type : "string",
+        size : 5
     }, 
 
     SortNo : {
-        type : "?smallint?",
+        type : "integer",
+        size : 3
+    }, 
+
+    flgIsFCFThaiStaff : {
+        type : "string",
         size : 5
     }, 
 
@@ -51,12 +56,12 @@ module.exports = {
 
     codeWorkPermitPhase : {
         type : "string",
-        size : 5
+        size : 3
     }, 
 
     codeVisaPhase : {
         type : "string",
-        size : 5
+        size : 3
     }, 
 
     codeVisaType : {
@@ -66,12 +71,7 @@ module.exports = {
 
     codeVisaCategory : {
         type : "string",
-        size : 5
-    }, 
-
-    codeWorkPermitProcessNow : {
-        type : "string",
-        size : 5
+        size : 4
     }, 
 
     IDProjectMain : {
@@ -81,7 +81,7 @@ module.exports = {
 
     IDFamily : {
         type : "integer",
-        size : 10
+        size : 3
     }, 
 
     codeFamilyRelationship : {
@@ -90,82 +90,93 @@ module.exports = {
     }, 
 
     flgIsThai : {
-        type : "integer",
-        size : 1
+        type : "string",
+        size : 5
     }, 
 
     DateBirth : {
-        type : "datetime"
-    }, 
-
-    NameLastEng : {
-        type : "string",
-        size : 35
-    }, 
-
-    NameFirstEng : {
-        type : "string",
-        size : 25
-    }, 
-
-    NamePreferredEng : {
-        type : "string",
-        size : 15
-    }, 
-
-    NameMiddleEng : {
-        type : "string",
-        size : 25
-    }, 
-
-    NameTitleEng : {
         type : "string",
         size : 10
     }, 
 
+    NameLastEng : {
+        type : "string",
+        size : 20
+    }, 
+
+    NameFirstEng : {
+        type : "string",
+        size : 22
+    }, 
+
+    NamePreferredEng : {
+        type : "string",
+        size : 12
+    }, 
+
+    NameMiddleEng : {
+        type : "string",
+        size : 26
+    }, 
+
+    NameTitleEng : {
+        type : "string",
+        size : 14
+    }, 
+
     NameTitleThai : {
         type : "string",
-        size : 15
+        size : 39
     }, 
 
     NameFirstThai : {
         type : "string",
-        size : 35
+        size : 36
     }, 
 
     NameMiddleThai : {
         type : "string",
-        size : 25
+        size : 43
     }, 
 
     NameLastThai : {
         type : "string",
-        size : 35
+        size : 48
     }, 
 
     NamePreferredThai : {
         type : "string",
-        size : 15
+        size : 37
     }, 
 
     NamePersonFLEng : {
         type : "string",
-        size : 243
+        size : 30
     }, 
 
     NamePersonLFEng : {
         type : "string",
-        size : 243
+        size : 42
+    }, 
+
+    NamePersonFMLEng : {
+        type : "string",
+        size : 57
     }, 
 
     NamePersonFLThai : {
         type : "string",
-        size : 243
+        size : 70
     }, 
 
     NamePersonLFThai : {
         type : "string",
-        size : 243
+        size : 71
+    }, 
+
+    NamePersonFMLThai : {
+        type : "string",
+        size : 115
     }, 
 
     codeGender : {
@@ -175,7 +186,7 @@ module.exports = {
 
     PlaceOfBirth : {
         type : "string",
-        size : 255
+        size : 30
     }, 
 
     codeNationality : {
@@ -185,27 +196,22 @@ module.exports = {
 
     codeMaritalStatus : {
         type : "string",
-        size : 2
+        size : 1
     }, 
 
     CollegeDegree : {
         type : "string",
-        size : 50
+        size : 10
     }, 
 
     codeEducationHighest : {
         type : "string",
-        size : 6
-    }, 
-
-    CollegeDescription : {
-        type : "string",
-        size : 50
+        size : 16
     }, 
 
     EducationSchool : {
         type : "string",
-        size : 50
+        size : 81
     }, 
 
     EducationYearGrad : {
@@ -215,192 +221,237 @@ module.exports = {
 
     EducationField : {
         type : "string",
-        size : 50
+        size : 92
     }, 
 
     EducationCountry : {
         type : "string",
-        size : 50
+        size : 27
     }, 
 
     LatestJob : {
         type : "string",
-        size : 150
+        size : 10
     }, 
 
     LastJobOccupation : {
         type : "string",
-        size : 50
+        size : 10
     }, 
 
     LastJobOccupationThai : {
         type : "string",
-        size : 50
+        size : 27
     }, 
 
     LastJobLocationName : {
         type : "string",
-        size : 50
+        size : 10
     }, 
 
     LastJobCountry : {
         type : "string",
-        size : 50
+        size : 10
     }, 
 
     LastJobPeriodOfEmployment : {
         type : "string",
-        size : 50
+        size : 10
     }, 
 
     LastJobReasonForResignation : {
         type : "string",
-        size : 50
+        size : 10
     }, 
 
     JobTitle : {
         type : "string",
-        size : 50
+        size : 137
     }, 
 
     JobDescSimple : {
         type : "string",
-        size : 255
+        size : 745
     }, 
 
     WorkAddress : {
+        type : "string",
+        size : 16
+    }, 
+
+    flgDonationWaived : {
+        type : "string",
+        size : 5
+    }, 
+
+    IDGroupSending : {
+        type : "string",
+        size : 8
+    }, 
+
+    IDGroupLocalOversite : {
+        type : "string",
+        size : 25
+    }, 
+
+    PPNumber : {
+        type : "string",
+        size : 254
+    }, 
+
+    PPCountryText : {
+        type : "string",
+        size : 255
+    }, 
+
+    codePPCountry : {
+        type : "string",
+        size : 49
+    }, 
+
+    PPIssuedWhere : {
+        type : "string",
+        size : 43
+    }, 
+
+    PPIssuedWhen : {
+        type : "string",
+        size : 153
+    }, 
+
+    PPDateExpire : {
+        type : "string",
+        size : 28
+    }, 
+
+    DateReturnFromBeingAway : {
+        type : "string",
+        size : 31
+    }, 
+
+    DateArrivalTarget : {
+        type : "string",
+        size : 75
+    }, 
+
+    DateArrived : {
+        type : "string",
+        size : 156
+    }, 
+
+    ArrivedFrom : {
+        type : "string",
+        size : 184
+    }, 
+
+    ArrivedBy : {
+        type : "string",
+        size : 141
+    }, 
+
+    ArrivalPort : {
+        type : "string",
+        size : 71
+    }, 
+
+    DepartureCardNo : {
+        type : "string",
+        size : 128
+    }, 
+
+    VisaDateExpire : {
+        type : "string",
+        size : 255
+    }, 
+
+    codeVisaLength : {
+        type : "string",
+        size : 91
+    }, 
+
+    flgWPIsFCF : {
+        type : "string",
+        size : 255
+    }, 
+
+    WPIssuedByWhom : {
+        type : "string",
+        size : 31
+    }, 
+
+    WPNumber : {
+        type : "string",
+        size : 255
+    }, 
+
+    WPDateReturned : {
+        type : "string",
+        size : 255
+    }, 
+
+    WPDateFirstIssued : {
+        type : "string",
+        size : 115
+    }, 
+
+    WPIssuedDate : {
         type : "string",
         size : 50
     }, 
 
     WPLength : {
-        type : "integer",
-        size : 10
-    }, 
-
-    flgDonationWaived : {
-        type : "integer",
-        size : 1
-    }, 
-
-    IDGroupSending : {
         type : "string",
-        size : 10
-    }, 
-
-    IDGroupLocalOversite : {
-        type : "string",
-        size : 10
-    }, 
-
-    PPNumber : {
-        type : "string",
-        size : 25
-    }, 
-
-    PPCountryText : {
-        type : "string",
-        size : 25
-    }, 
-
-    codePPCountry : {
-        type : "string",
-        size : 10
-    }, 
-
-    PPIssuedWhere : {
-        type : "string",
-        size : 50
-    }, 
-
-    PPIssuedWhen : {
-        type : "datetime"
-    }, 
-
-    PPDateExpire : {
-        type : "datetime"
-    }, 
-
-    VisaDateExpire : {
-        type : "datetime"
-    }, 
-
-    WPNumber : {
-        type : "string",
-        size : 25
-    }, 
-
-    WPIssuedDate : {
-        type : "datetime"
+        size : 100
     }, 
 
     WPExpireDate : {
-        type : "datetime"
+        type : "string",
+        size : 255
     }, 
 
     WPProvince : {
         type : "string",
-        size : 25
+        size : 93
+    }, 
+
+    WPProvinceThai : {
+        type : "string",
+        size : 132
     }, 
 
     codeFieldOffice : {
         type : "string",
-        size : 3
+        size : 535
     }, 
 
     LocationEmployedThai : {
         type : "string",
-        size : 50
-    }, 
-
-    DateArrivalTarget : {
-        type : "datetime"
-    }, 
-
-    DateArrived : {
-        type : "datetime"
-    }, 
-
-    ArrivedFrom : {
-        type : "string",
-        size : 255
-    }, 
-
-    ArrivedBy : {
-        type : "string",
-        size : 255
-    }, 
-
-    DepartureCardNo : {
-        type : "string",
-        size : 10
-    }, 
-
-    ArrivalPort : {
-        type : "string",
-        size : 50
+        size : 93
     }, 
 
     DateDepartTarget : {
-        type : "datetime"
+        type : "string",
+        size : 60
     }, 
 
     DateExit : {
-        type : "datetime"
+        type : "string",
+        size : 62
     }, 
 
     DateLastCPTraining : {
-        type : "datetime"
+        type : "string",
+        size : 42
     }, 
 
     Tel : {
         type : "string",
-        size : 25
+        size : 46
     }, 
 
     "e-mail address" : {
         type : "string",
-        size : 100
+        size : 67
     }, 
 
     Note : {
@@ -410,21 +461,22 @@ module.exports = {
 
     Status : {
         type : "string",
-        size : 255
+        size : 80
     }, 
 
     Project : {
         type : "string",
-        size : 255
+        size : 97
     }, 
 
     DateNext90Days : {
-        type : "datetime"
+        type : "string",
+        size : 538
     }, 
 
     "Work Schedule & Address" : {
         type : "string",
-        size : 255
+        size : 86
     }, 
 
     codeProjectAppliedFor : {
@@ -433,176 +485,231 @@ module.exports = {
     }, 
 
     "Application Datestamp" : {
-        type : "datetime"
+        type : "string",
+        size : 209
     }, 
 
     "Total Visas with WP (Including Followers)" : {
-        type : "float"
-    }, 
-
-    "xxxDonation Waved" : {
-        type : "integer",
-        size : 10
+        type : "string",
+        size : 62
     }, 
 
     "Cost Share Amount" : {
-        type : "integer",
-        size : 10
+        type : "string",
+        size : 219
     }, 
 
     "Cost Share Waived" : {
-        type : "integer",
-        size : 10
+        type : "string",
+        size : 80
+    }, 
+
+    MemoCostShare : {
+        type : "string",
+        size : 715
+    }, 
+
+    flgCSOK : {
+        type : "string",
+        size : 68
+    }, 
+
+    CostShareAssessed : {
+        type : "string",
+        size : 71
+    }, 
+
+    CostShareWaived : {
+        type : "string",
+        size : 72
+    }, 
+
+    CostShareDue : {
+        type : "string",
+        size : 86
     }, 
 
     "Cost Share Account" : {
         type : "string",
-        size : 6
+        size : 246
     }, 
 
-    "Staff Directory" : {
-        type : "integer",
-        size : 1
+    CostShareAcctID : {
+        type : "string",
+        size : 93
+    }, 
+
+    codePaymentPlan : {
+        type : "string",
+        size : 209
+    }, 
+
+    codePaymentCycle : {
+        type : "string",
+        size : 89
+    }, 
+
+    PaymentStartMonth : {
+        type : "string",
+        size : 169
     }, 
 
     flgIncludeInStaffDirectory : {
-        type : "integer",
-        size : 1
+        type : "string",
+        size : 111
     }, 
 
     Organization : {
         type : "string",
-        size : 255
-    }, 
-
-    IDDBF : {
-        type : "integer",
-        size : 10
-    }, 
-
-    IDPersonOld : {
-        type : "float"
+        size : 83
     }, 
 
     NameThaiFull1 : {
         type : "string",
-        size : 55
-    }, 
-
-    codePersonStatus : {
-        type : "string",
-        size : 5
+        size : 85
     }, 
 
     PositionThaiStaff : {
         type : "string",
-        size : 200
+        size : 185
     }, 
 
     IDThaiGovtCard : {
         type : "string",
-        size : 20
+        size : 44
     }, 
 
     MemoNote : {
-        type : "text"
+        type : "string",
+        size : 66
     }, 
 
     MailingAddress : {
         type : "string",
-        size : 255
+        size : 79
     }, 
 
     PhysicalAddress : {
         type : "string",
-        size : 255
+        size : 56
     }, 
 
     LanguageSpoken : {
         type : "string",
-        size : 100
+        size : 1295
     }, 
 
     Denomination : {
         type : "string",
-        size : 55
+        size : 61
     }, 
 
     MinistryContact : {
         type : "string",
-        size : 55
+        size : 12
     }, 
 
     BackGroundCheck : {
-        type : "integer",
-        size : 1
+        type : "string",
+        size : 59
+    }, 
+
+    flgUseThisInfoForSA : {
+        type : "string",
+        size : 9
     }, 
 
     SA : {
         type : "string",
-        size : 100
+        size : 5
     }, 
 
     SAContact : {
         type : "string",
-        size : 55
+        size : 5
     }, 
 
     SAEmail : {
         type : "string",
-        size : 55
+        size : 10
     }, 
 
     SAPhone : {
         type : "string",
-        size : 55
+        size : 10
     }, 
 
     SAAddress : {
         type : "string",
-        size : 255
+        size : 10
     }, 
 
     STTripDetails : {
         type : "string",
-        size : 255
+        size : 10
     }, 
 
     isMoreThan15Days : {
-        type : "integer",
-        size : 1
+        type : "string",
+        size : 10
     }, 
 
-    "x-PIANum" : {
+    "x-codeWorkPermitProcessNow" : {
         type : "string",
-        size : 25
+        size : 10
     }, 
 
-    "x-FCLNum" : {
+    "xxxDonation Waved" : {
         type : "string",
-        size : 25
-    }, 
-
-    "x-3Num" : {
-        type : "string",
-        size : 25
-    }, 
-
-    "x-4Num" : {
-        type : "string",
-        size : 25
+        size : 10
     }, 
 
     AppDatestamp : {
-        type : "datetime"
+        type : "string",
+        size : 10
     }, 
 
-    NamePersonFMLEng : {
+    rptMemoVisa365 : {
         type : "string",
-        size : 243
-    },
+        size : 10
+    }, 
 
+    "xyz-codePersonStatus" : {
+        type : "string",
+        size : 10
+    }, 
 
+    flgQrtRptSubmitted : {
+        type : "string",
+        size : 10
+    }, 
+
+    DateQrtRptSubmitted : {
+        type : "string",
+        size : 10
+    }, 
+
+    ECF_NameContact : {
+        type : "string",
+        size : 10
+    }, 
+
+    ECF_Email : {
+        type : "string",
+        size : 10
+    }, 
+
+    ECF_Phone : {
+        type : "string",
+        size : 10
+    }, 
+
+    ECF_Relationship : {
+        type : "string",
+        size : 10
+    }, 
+
+// APPDEV Added here:
 
     taggedInImages: {
         collection:'FCFActivityImages',

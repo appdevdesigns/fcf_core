@@ -8,7 +8,7 @@ var AD = require('ad-utils');
 
 module.exports = {
 
-    tableName:"tblministries",
+    tableName:"tblMinistries",
     autoCreatedAt:false,
     autoUpdatedAt:false,
     autoPK:false,
