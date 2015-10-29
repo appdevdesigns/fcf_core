@@ -29,6 +29,6 @@
     "chai": "^1.10.0",
     "mocha": "^2.1.0",
     "mocha-phantomjs": "^3.5.2",
-    "phantomjs": "^1.9.13"
+    "phantomjs": "1.9.7-15"
   }
 }
