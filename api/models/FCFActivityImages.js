@@ -122,8 +122,14 @@ module.exports = {
             // reduce uploadedBy => { IDPerson, display_name }
             if (this.uploadedBy) {
                 simpleActivity.uploadedBy = {
-                    IDPerson: this.uploadedBy.IDPerson,
-                    displayName: this.uploadedBy.displayName(langCode)
+                    IDPerson: this.uploadedBy.IDPerson
+                }  
+
+                if (this.uploadedBy.displayName) {
+                    simpleActivity.displayName = this.uploadedBy.displayName(langCode)
+                } else {
+                    
+                    simpleActivity.displayName = this.uploadedBy.NamePersonFLEng;
                 }
             }
 
