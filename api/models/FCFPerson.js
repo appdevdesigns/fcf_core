@@ -747,8 +747,13 @@ module.exports = {
     },
 
 
+	address: {
+		collection:'FCFAddress',
+		via: 'IDPerson'
+	},
 
-    displayName:function(code) {
+
+    displyName:function(code) {
 
         code = code || Multilingual.languages.default();
 
