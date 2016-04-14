@@ -753,7 +753,7 @@ module.exports = {
 	},
 
 
-    displyName:function(code) {
+    displayName:function(code) {
 
         code = code || Multilingual.languages.default();
 
