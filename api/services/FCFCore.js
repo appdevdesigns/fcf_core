@@ -205,6 +205,7 @@ AD.log('... person for guid:', guid);
                             AD.log('... *** no person found for IDPerson:'+personID);
                         }
                         dfd.resolve(person);
+                        return null;
                     })
                     .catch(function(err){
                         AD.log.error('... error: FCFPerson.findOne() failed:', err);
@@ -212,6 +213,7 @@ AD.log('... person for guid:', guid);
                     })
                     
                 }
+                return null;
             })
             .catch(function(err) {
                 AD.log.error('... error: GUID2Person.find() failed:', err);
