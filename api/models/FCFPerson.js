@@ -795,6 +795,7 @@ module.exports = {
                     })
 
                     next();
+                    return null;
                 })
                 .catch(function(err){
                     next(err);
@@ -811,6 +812,7 @@ module.exports = {
                 .then(function(list){
                     minTeams = list;
                     next();
+                    return null;
                 })
 
             }

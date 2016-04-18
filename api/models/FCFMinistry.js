@@ -93,6 +93,7 @@ module.exports = {
                 .then(function(person) {
                     self.personResponsible = person;
                     dfd.resolve();
+                    return null;
                 })
 
             } else {
