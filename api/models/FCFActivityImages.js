@@ -102,6 +102,11 @@ module.exports = {
                 simpleActivity.caption = this.caption;
             }
 
+            // transfer caption is available
+            if (this.caption_govt) {
+                simpleActivity.caption_govt = this.caption_govt;
+            }
+
             // simple date: yyyy/mm/dd
             if (simpleActivity.date) {
                 simpleActivity.date = simpleActivity.date.toISOString().split('T')[0];

@@ -11,12 +11,16 @@ module.exports = {
     connection:'fcf',
     tableName:"fcf_activity_trans",
 
-migrate:'alter',  // don't update the tables!
+migrate:'alter',  
     attributes: {
 
         activity_name : { type: 'string' },
 
-        activity_description : { type: 'string' }
+        activity_name_govt : { type: 'string' },
+
+        activity_description : { type: 'string' },
+
+        activity_description_govt : { type:'string' }
           
         // @hasOne FCFActivity reference
         ,fcfactivity:{
