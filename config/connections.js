@@ -42,7 +42,7 @@ module.exports = {
 */
 
     "fcf": {
-        module: "sails-mysql",
+        adapter: "sails-mysql",
         host: '....',
         port: '....',
         user: '....',
