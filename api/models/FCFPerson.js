@@ -758,9 +758,9 @@ module.exports = {
         code = code || Multilingual.languages.default();
 
         if (code == 'en') {
-            return this.NamePersonFLEng;
+            return this.NamePersonFLEng || '[en]'+this.NamePersonFLThai;
         } else {
-            return this.NamePersonFLThai;
+            return this.NamePersonFLThai || '[th]'+this.NamePersonFLEng;
         }
     },
 
