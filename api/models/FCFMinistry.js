@@ -1,9 +1,9 @@
 /**
-* Ministry.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
-*/
+ * FCFMinistry.js
+ *
+ * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
+ */
 var AD = require('ad-utils');
 
 module.exports = {
@@ -20,49 +20,62 @@ module.exports = {
 
     attributes: {
 
-        IDMinistry : {
+        "IDMinistry" : {
             type : "integer",
-            size : 10,
-            primaryKey : true
+            size : 3,
+            primaryKey:true
         }, 
-        codeMinistryStatus : {
+
+        "IDProject" : {
             type : "string",
             size : 5
         }, 
-        // IDProject : {
-        //     type : "string",
-        //     size : 5
-        // }, 
-        NameMinistryNat : {
+
+        "codeMinistryStatus" : {
             type : "string",
-            size : 50
+            size : 1
         }, 
-        NameMinistryEng : {
+
+        "NameMinistryNat" : {
             type : "string",
-            size : 50
+            size : 26
         }, 
-        DateMinistryStarted : {
-            type : "datetime"
+
+        "NameMinistryEng" : {
+            type : "string",
+            size : 42
         }, 
-        DateMinistryEnded : {
-            type : "datetime"
-        }, 
-        IDPersonResponsible : {
-            type : "integer",
+
+        "DateMinistryStarted" : {
+            type : "string",
             size : 10
         }, 
-        WorkAddressThai : {
+
+        "DateMinistryEnded" : {
             type : "string",
-            size : 50
+            size : 10
         }, 
-        WorkAddressEng : {
-            type : "string",
-            size : 50
+
+//// TODO: make this associated to FCFPerson!
+        "IDPersonResponsible" : {
+            type : "integer",
+            size : 3
         }, 
-        MinistryDisplayName : {
+
+        "WorkAddressThai" : {
             type : "string",
-            size : 243
-        },
+            size : 48
+        }, 
+
+        "WorkAddressEng" : {
+            type : "string",
+            size : 10
+        }, 
+
+        "MinistryDisplayName" : {
+            type : "string",
+            size : 17
+        }, 
 
 
         // @hasOne Project (FCFProject)
@@ -89,6 +102,7 @@ module.exports = {
                 FCFPerson.findOne({IDPerson: this.IDPersonResponsible})
                 .fail(function(err){
                     dfd.reject(err);
+                    return null;
                 })
                 .then(function(person) {
                     self.personResponsible = person;
@@ -103,6 +117,7 @@ module.exports = {
             return dfd;
 
         }
+
 
     }
 };

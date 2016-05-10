@@ -1,9 +1,9 @@
 /**
-* FCFPerson.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
-*/
+ * FCFAddress.js
+ *
+ * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
+ */
 
 var AD = require('ad-utils');
 var _ = require('lodash');
@@ -26,120 +26,128 @@ migrate:'alter',
     IDPerson : {
         // type : "integer",
         // size : 4,
-		// primaryKey : true
-		model:'FCFPerson'
+        // primaryKey : true
+        model:'FCFPerson'
     }, 
 
-    IDFamily : {
+    "IDFamily" : {
         type : "string",
         size : 10
     }, 
 
-    IDGroup : {
+    "IDGroup" : {
         type : "string",
         size : 3
     }, 
 
-    IDProject : {
+    "IDProject" : {
         type : "integer",
-        size : 5
+        size : 11
     }, 
 
-    IDMinistry : {
+    "IDMinistry" : {
         type : "string",
         size : 5
     }, 
 
-    codeAddressType : {
+    "codeAddressType" : {
         type : "string",
         size : 5
     }, 
 
-    flgIsLocalAddress : {
+    "flgIsLocalAddress" : {
         type : "string",
         size : 5
     }, 
 
-    Address1 : {
+    "Address1" : {
         type : "string",
         size : 48
     }, 
 
-    Address2 : {
+    "Address2" : {
         type : "string",
         size : 27
     }, 
 
-    Address1Thai : {
+    "Address1Thai" : {
         type : "string",
         size : 84
     }, 
 
-    Address2Thai : {
+    "Address2Thai" : {
         type : "string",
         size : 65
     }, 
 
-    IDMuubahn : {
+    "IDMuubahn" : {
         type : "integer",
-        size : 10
+        size : 11
     }, 
 
-    Neighborhood : {
+    "Neighborhood" : {
         type : "string",
         size : 14
     }, 
 
-    NeighborhoodThai : {
+    "NeighborhoodThai" : {
         type : "string",
         size : 87
     }, 
 
-    IDProvince : {
-        type : "int",
+    "IDProvince" : {
+        type : "string",
         size : 2
     }, 
 
-    ProvState : {
+    "ProvState" : {
         type : "string",
         size : 27
     }, 
 
-    IDAmphur : {
+    "IDAmphur" : {
         type : "string",
         size : 15
     }, 
 
-    AmpCity : {
+    "AmpCity" : {
         type : "string",
         size : 42
     }, 
 
-    IDTambon : {
+    "IDTambon" : {
         type : "string",
         size : 6
     }, 
 
-    TamArea : {
+    "TamArea" : {
         type : "string",
         size : 9
     }, 
 
-    Zip : {
+    "Zip" : {
         type : "string",
         size : 10
     }, 
 
-    Country : {
+    "Country" : {
         type : "string",
         size : 10
     }, 
 
-    ManyPlotData : {
+    "ManyPlotData" : {
         type : "string",
         size : 10
+    }, 
+
+    "id" : {
+        type : "integer",
+        size : 10,
+        primaryKey : true,
+        autoIncrement : true
     }
 
 
   }
 };
+
