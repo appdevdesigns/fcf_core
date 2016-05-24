@@ -32,7 +32,6 @@ module.exports = {
         //     action_key:'fcfcore.something', 
         //     action_description:'Allows the user to access the opsportal.' 
         // },
-
     ]
 
 };
