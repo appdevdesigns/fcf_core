@@ -12,6 +12,10 @@
  *
  */
 module.exports = {
+
+    directories:[
+        '/assets/data/fcf'
+    ]
 /*
 
      // list any directories that need to be created in the base sails path

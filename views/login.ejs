@@ -1,0 +1,155 @@
+<link href="/styles/font-awesome.css" rel="stylesheet" />   
+<link href="/js/bootstrap/css/bootstrap.min.css" rel="stylesheet" />   
+<link href="/styles/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="/OpsPortal/opsportal.css" rel="stylesheet" />   
+<link href="/OpsPortal/opsportal-theme.css" rel="stylesheet" />
+<link href="/styles/login-fcf.css" rel="stylesheet" />
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap/js/bootstrap.min.js" ></script>
+
+<% if (authErrMessage) { %>
+    <div id="login-message" class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= authErrMessage %>
+    </div>
+<% } %>
+
+<div class="op-container" id="login">
+	<!--Head-->
+	<div class="op-container op-masthead nopadLR nopadBotm off-botm20  ">
+		<div class="row op-container logo">
+			<div class="col-lg-12">
+				<p class="icon-title"><img src="/images/FCFCore/fcf-logo.jpg" class="img"/><span translate=1>Adroit Login</span></p>
+			</div>				
+		</div>
+		<div class="bordergray"></div>
+		<div class="row">
+				<ul class="op-list">
+					<li><a form-show="login" href="#login" translate=1>Login</a></li>
+				    <% if (canRegister) { %>
+					<li><a form-show="signup" href="#singup" translate=1>Sign up</a></li>
+					<% } %>
+				</ul>			
+		</div>
+	
+	</div>
+	<!--/Head-->
+	<!--Log in-->
+	<div class="op-container form-display login">
+		<div class="op-container off-top20">
+			<p translate="1">Enter your username and password <strong>to login</strong></p>
+		</div>
+		<div class="op-contianer padding10 off-top20">
+			<form accept-charset="utf-8" method="post" action="/site/login" class="simform">
+				<input type="hidden" name="_csrf" value="<%= _csrf %>">
+				<div class="form-group">
+					<label class="string optional" for="user-name" translate="1" >Username</label>
+					<input class="string optional" maxlength="255" id="user-name" placeholder="Username" type="text" size="50" name="username" />
+				</div>
+				<div class="form-group">
+					<label class="string optional" for="user-pw" translate=1>Password</label>
+					<input class="string optional" maxlength="255" id="user-pw" placeholder="Password" type="password" size="255" name="password" />
+				</div>
+
+				<div class="row off-top10">
+					<div class="col-lg-6 align-center"><a class="special pull-left" role="link" href="#" translate=1>Forgot your password?</a></div>
+					<div class="col-lg-6 align-center"><button class="sumbit" type="submit" translate=1>Log In</button></div>			
+				</div>
+
+			</form>			
+		</div>
+		<div class="border op-container off-top10" style="display:none;">
+			<div class="op-container op-block nopadBotm nomargintop">
+				<a href="#" class="connect facebook">
+					<div class="connect-icon">
+						<i class="fa fa-facebook"></i>
+					</div>
+					<div class="connect-context">
+						<span>Sign in with <strong>Facebook</strong></span>
+					</div>
+				</a>
+				<a href="#" class="connect googleplus">
+					<div class="connect-icon">
+						<i class="fa fa-google-plus"></i>
+					</div>
+					<div class="connect-context">
+						<span>Sign in with <strong>Google+</strong></span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!--/Log in-->
+	<!--Sign in-->
+	<div class="op-container form-display signup" style="display:none">
+		<div class="op-container off-top20">
+			<p style="text-align:center">Enter your email and password <strong>to create account</strong></p>
+		</div>
+		<div class="op-contianer padding10 off-top20">
+			<form>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Email address</label>
+					<input type="email" class="form-control" id="signupEmail" placeholder="Email">
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Password</label>
+							<input type="email" class="form-control" id="signupEmail" placeholder="Password">
+						</div>					
+					</div>
+					<div class="col-lg-6">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Repeat Password</label>
+							<input type="email" class="form-control" id="signupEmail" placeholder="Repeat Password">
+						</div>					
+					</div>
+				</div>
+			</form>		
+				<div class="row border padtop10">
+					<div class="col-lg-6 center"><p>By creating an account you agree to our <a class="special" href="#" target="_blank" role="link">Terms & Privacy</a></p></div>
+					<div class="col-lg-6 center"><button type="submit" class="btn  btn-primary op-btn">Submit</button></div>			
+				</div>			
+		</div>
+		<div class="border op-container off-top10" style="display:none;">
+			<div class="op-container op-block nopadBotm nomargintop">
+				<a href="#" class="connect facebook">
+					<div class="connect-icon">
+						<i class="fa fa-facebook"></i>
+					</div>
+					<div class="connect-context">
+						<span>Create an account with <strong>Facebook</strong></span>
+					</div>
+				</a>
+				<a href="#" class="connect googleplus">
+					<div class="connect-icon">
+						<i class="fa fa-google-plus"></i>
+					</div>
+					<div class="connect-context">
+						<span>Create an account with <strong>Google+</strong></span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>	
+	<!--/Sign in-->
+</div>
+
+<script>
+$(function() {
+    // Toggle between Login / Signup
+    $('a[form-show]').on('click', function(ev) {
+        var form = $(this).attr('form-show');
+        $('.form-display').hide();
+        $('.form-display').filter('.' + form).show();
+        ev.preventDefault();
+    });
+    
+    // Auto-show the Signup form if requested
+    if (window.location.href.match('#signup')) {
+        $('.form-display').hide();
+        $('.form-display').filter('.signup').show();
+    }
+});
+</script>
