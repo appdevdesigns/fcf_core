@@ -1,13 +1,13 @@
 /**
-* Objective.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
-*/
+ * FCFObjective.js
+ *
+ * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
+ */
 
 module.exports = {
 
-  tableName:"tblobjectives",
+  tableName:"tblObjectives",
   autoCreatedAt:false,
   autoUpdatedAt:false,
   autoPK:false,
@@ -17,30 +17,37 @@ migrate:'alter',
   connection:"fcf",
 
 
+
   attributes: {
 
-    IDObjective : {
+    "IDObjective" : {
         type : "integer",
         size : 10,
-        primaryKey : true
+        primaryKey : true,
+        autoIncrement : true
     }, 
-    IDGroup : {
+
+    "IDGroup" : {
         type : "string",
         size : 10
     }, 
-    IDProject : {
+
+    "IDProject" : {
         type : "string",
         size : 5
     }, 
-    IDMinistry : {
+
+    "IDMinistry" : {
         type : "integer",
-        size : 10
+        size : 11
     }, 
-    ObjectiveDescThai : {
+
+    "ObjectiveDescThai" : {
         type : "string",
         size : 250
     }, 
-    ObjectiveDescEng : {
+
+    "ObjectiveDescEng" : {
         type : "string",
         size : 250
     },
@@ -64,6 +71,7 @@ migrate:'alter',
             return this.ObjectiveDescThai;
         }
     }
+
 
   }
 };

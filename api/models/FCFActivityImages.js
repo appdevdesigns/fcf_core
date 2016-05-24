@@ -37,6 +37,20 @@ module.exports = {
         },
 
 
+
+        status:{
+            type:'string',
+            defaultsTo:'new',
+            enum:['new', 'approved', 'denied', 'translated', 'ready', 'updated']
+            // 'new'        : just created, waiting for approval
+            // 'approved'   : approved, waiting for translation
+            // 'translated' : translated waiting for next step
+            // 'ready'      : finally ready for use by reports
+            // 'updated'    : a change happened, and now waiting for approval again
+            // 'denied'     : not approved (either as newly created or updated)
+        },
+
+
         /*
          * @function toSavedFileName
          *
@@ -88,6 +102,11 @@ module.exports = {
                 simpleActivity.caption = this.caption;
             }
 
+            // transfer caption is available
+            if (this.caption_govt) {
+                simpleActivity.caption_govt = this.caption_govt;
+            }
+
             // simple date: yyyy/mm/dd
             if (simpleActivity.date) {
                 simpleActivity.date = simpleActivity.date.toISOString().split('T')[0];
@@ -108,8 +127,14 @@ module.exports = {
             // reduce uploadedBy => { IDPerson, display_name }
             if (this.uploadedBy) {
                 simpleActivity.uploadedBy = {
-                    IDPerson: this.uploadedBy.IDPerson,
-                    displayName: this.uploadedBy.displayName(langCode)
+                    IDPerson: this.uploadedBy.IDPerson
+                }  
+
+                if (this.uploadedBy.displayName) {
+                    simpleActivity.displayName = this.uploadedBy.displayName(langCode)
+                } else {
+                    
+                    simpleActivity.displayName = this.uploadedBy.NamePersonFLEng;
                 }
             }
 

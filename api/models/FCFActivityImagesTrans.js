@@ -16,7 +16,9 @@ migrate:'alter',  // don't update the tables!
 
   attributes: {
 
-    caption : { type: 'string' }
+    caption : { type: 'string' },
+
+    caption_govt : {type: 'string' }
           
         // @hasOne FCFActivityImages reference
         ,fcfactivityimages:{

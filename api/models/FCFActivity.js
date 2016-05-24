@@ -44,6 +44,18 @@ module.exports = {
         images: {
             collection:'FCFActivityImages',
             via:'activity'
+        },
+
+        status:{
+            type:'string',
+            defaultsTo:'new',
+            enum:['new', 'approved', 'denied', 'translated', 'ready', 'updated']
+            // 'new'        : just created, waiting for approval
+            // 'approved'   : approved, waiting for translation
+            // 'translated' : translated waiting for next step
+            // 'ready'      : finally ready for use by reports
+            // 'updated'    : a change happened, and now waiting for approval again
+            // 'denied'     : not approved (either as newly created or updated)
         }
           
         //// 
@@ -113,5 +125,6 @@ module.exports = {
         }
 
     }
+
 };
 

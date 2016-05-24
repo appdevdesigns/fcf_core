@@ -28,11 +28,10 @@ module.exports = {
     language_code:'en',
 
     actions:[
-        { 
-            action_key:'fcfcore.something', 
-            action_description:'Allows the user to access the opsportal.' 
-        },
-
+        // { 
+        //     action_key:'fcfcore.something', 
+        //     action_description:'Allows the user to access the opsportal.' 
+        // },
     ]
 
 };

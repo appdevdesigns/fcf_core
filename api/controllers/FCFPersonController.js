@@ -6,6 +6,13 @@
  */
 
 module.exports = {
+
+    // _config: {
+    //     model: "fcfperson", // all lowercase model name
+    //     actions: true,
+    //     shortcuts: true,
+    //     rest: true
+    // }
 	
 };
 

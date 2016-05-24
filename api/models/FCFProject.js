@@ -1,274 +1,287 @@
 /**
-* FCFProjects.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
-*/
+ * FCFProject.js
+ *
+ * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
+ */
 
 module.exports = {
 
-    tableName:"tblprojects",
-    autoCreatedAt:false,
-    autoUpdatedAt:false,
-    autoPK:false,
-    migrate:'safe',  // don't update the tables!
+  autoCreatedAt:false,
+  autoUpdatedAt:false,
+  autoPK:false,
+  migrate:'safe',  // don't update the tables!
 
 
-    connection:"fcf",
+  tableName:'tblProjects',
+
+
+  connection:'fcf',
 
 
 
-    attributes: {
+  attributes: {
 
-        IDProject : {
-            type : "string",
-            size : 5,
-            primaryKey : true
-        }, 
+    "IDProject" : {
+        type : "string",
+        size : 5,
+        primaryKey : true
+    }, 
 
-        IDGroup : {
-            type : "string",
-            size : 10
-        }, 
+    "IDGroup" : {
+        type : "string",
+        size : 4
+    }, 
 
-        codeProjectStatus : {
-            type : "string",
-            size : 5
-        }, 
+    "codeProjectStatus" : {
+        type : "string",
+        size : 2
+    }, 
 
-        "xxActive (TF)" : {
-            type : "integer",
-            size : 1
-        }, 
+    "flgIsCCFProject" : {
+        type : "string",
+        size : 1
+    }, 
 
-        codeFieldOffice : {
-            type : "string",
-            size : 3
-        }, 
+    "codeFieldOffice" : {
+        type : "string",
+        size : 3
+    }, 
 
-        IDPersonLeading : {
-            type : "integer",
-            size : 10
-        }, 
+    "IDPersonLeading" : {
+        type : "integer",
+        size : 3
+    }, 
 
-        LeaderLookUp : {
-            type : "integer",
-            size : 10
-        }, 
+    "LeaderLookUp" : {
+        type : "string",
+        size : 10
+    }, 
 
-        IDAcctCodeCostShare : {
-            type : "?smallint?",
-            size : 5
-        }, 
+    "flgAttendsMonthlyMeetings" : {
+        type : "string",
+        size : 1
+    }, 
 
-        ProjectNameNat : {
-            type : "string",
-            size : 100
-        }, 
+    "ProjectNameNat" : {
+        type : "string",
+        size : 107
+    }, 
 
-        ProjectNameEng : {
-            type : "string",
-            size : 100
-        }, 
+    "ProjectNameEng" : {
+        type : "string",
+        size : 60
+    }, 
 
-        ProjectDescriptionEng : {
-            type : "text"
-        }, 
+    "ProjectNameNickThai" : {
+        type : "string",
+        size : 30
+    }, 
 
-        ProjectDescriptionNat : {
-            type : "text"
-        }, 
+    "ProjectNameNickEng" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ProjectRationalNat : {
-            type : "text"
-        }, 
+    "ProjectDescriptionEng" : {
+        type : "string",
+        size : 1382
+    }, 
 
-        ProjectRationalEng : {
-            type : "text"
-        }, 
+    "ProjectDescriptionNat" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ProjectObjectivesNat : {
-            type : "text"
-        }, 
+    "ProjectRationalNat" : {
+        type : "string",
+        size : 1112
+    }, 
 
-        ProjectObjectivesEng : {
-            type : "text"
-        }, 
+    "ProjectRationalEng" : {
+        type : "string",
+        size : 662
+    }, 
 
-        ProjectOperationPlanNat : {
-            type : "text"
-        }, 
+    "ProjectObjectivesNat" : {
+        type : "string",
+        size : 2324
+    }, 
 
-        ProjectOperationPlanEng : {
-            type : "text"
-        }, 
+    "ProjectObjectivesEng" : {
+        type : "string",
+        size : 911
+    }, 
 
-        ProjectPlan : {
-            type : "text"
-        }, 
+    "ProjectOperationPlanNat" : {
+        type : "string",
+        size : 1260
+    }, 
 
-        ProjectDateStart : {
-            type : "datetime"
-        }, 
+    "ProjectOperationPlanEng" : {
+        type : "string",
+        size : 1525
+    }, 
 
-        ProjectDateEnd : {
-            type : "datetime"
-        }, 
+    "ProjectPlan" : {
+        type : "string",
+        size : 10
+    }, 
 
-        BudgetSummary : {
-            type : "text"
-        }, 
+    "ProjectDateStart" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ProjectEvaluationEng : {
-            type : "text"
-        }, 
+    "ProjectDateEnd" : {
+        type : "string",
+        size : 9
+    }, 
 
-        ProjectEvaluationNat : {
-            type : "text"
-        }, 
+    "BudgetSummary" : {
+        type : "string",
+        size : 19
+    }, 
 
-        BenefitToSocietyNat : {
-            type : "text"
-        }, 
+    "ProjectEvaluationEng" : {
+        type : "string",
+        size : 372
+    }, 
 
-        BenefitToSocietyEng : {
-            type : "text"
-        }, 
+    "ProjectEvaluationNat" : {
+        type : "string",
+        size : 936
+    }, 
 
-        "xProject Leader Email (Copy)" : {
-            type : "string",
-            size : 255
-        }, 
+    "BenefitToSocietyNat" : {
+        type : "string",
+        size : 934
+    }, 
 
-        "xxFCF Project Name" : {
-            type : "string",
-            size : 255
-        }, 
+    "BenefitToSocietyEng" : {
+        type : "string",
+        size : 774
+    }, 
 
-        "x-Project Leader Email" : {
-            type : "string",
-            size : 255
-        }, 
+    "flgIncludeInDirectory" : {
+        type : "string",
+        size : 6
+    }, 
 
-        flgIncludeInDirectory : {
-            type : "integer",
-            size : 1
-        }, 
+    "flgIsPartOfCostShareSystem" : {
+        type : "string",
+        size : 40
+    }, 
 
-        "xxxinclude in directory" : {
-            type : "integer",
-            size : 1
-        }, 
+    "CostShareAmountPrj" : {
+        type : "string",
+        size : 371
+    }, 
 
-        "Visa Letter Statement" : {
-            type : "text"
-        }, 
+    "CostShareAmountWaived" : {
+        type : "string",
+        size : 371
+    }, 
 
-        Field4 : {
-            type : "float"
-        }, 
+    "CostShareAmountDue" : {
+        type : "integer",
+        size : 4
+    }, 
 
-        Field5 : {
-            type : "float"
-        }, 
+    "CostShareAcctIDPrj" : {
+        type : "integer",
+        size : 6
+    }, 
 
-        "Active Volunteers (Num)" : {
-            type : "float"
-        }, 
+    "CostShareAcctIDVol" : {
+        type : "string",
+        size : 41
+    }, 
 
-        "Size ((millions/year)*10)" : {
-            type : "float"
-        }, 
+    "CostShareAmountPrjNext" : {
+        type : "string",
+        size : 437
+    }, 
 
-        "Monthly Cost Share Amount" : {
-            type : "float"
-        }, 
+    "CostShareAmountWaivedNext" : {
+        type : "string",
+        size : 364
+    }, 
 
-        CostShareAmountPrj : {
-            type : "integer",
-            size : 10
-        }, 
+    "ProjectContext" : {
+        type : "string",
+        size : 10
+    }, 
 
-        "Monthly Cost Share Amount Waived" : {
-            type : "float"
-        }, 
+    "ProjectVision" : {
+        type : "string",
+        size : 10
+    }, 
 
-        "Monthly Cost Share Account" : {
-            type : "string",
-            size : 255
-        }, 
+    "ProjectGuidingPrincipels" : {
+        type : "string",
+        size : 10
+    }, 
 
-        "1 Year MOU established on:" : {
-            type : "string",
-            size : 255
-        }, 
+    "ProjectMissionStatesment" : {
+        type : "string",
+        size : 10
+    }, 
 
-        "logo (max 100x100)" : {
-            type : "string",
-            size : 255
-        }, 
+    "ProjectFocus" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ID1 : {
-            type : "integer",
-            size : 10
-        }, 
+    "ProjectTransformationStatement" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ID : {
-            type : "float"
-        }, 
+    "ProjectTargetBeneficiariesEng" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ProjectContext : {
-            type : "text"
-        }, 
+    "ProjectTargetBeneficiariesNat" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ProjectVision : {
-            type : "string",
-            size : 250
-        }, 
+    "ProjectTeamOverview" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ProjectGuidingPrincipels : {
-            type : "string",
-            size : 50
-        }, 
+    "Project3YearPlan" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ProjectMissionStatesment : {
-            type : "string",
-            size : 250
-        }, 
+    "ProjectTrainingPlan" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ProjectFocus : {
-            type : "string",
-            size : 250
-        }, 
+    "FundRaisingPlan" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ProjectTransformationStatement : {
-            type : "string",
-            size : 50
-        }, 
+    "MemoCostShareIssues" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ProjectTargetBeneficiariesEng : {
-            type : "text"
-        }, 
+    "Visa Letter Statement" : {
+        type : "string",
+        size : 10
+    }, 
 
-        ProjectTargetBeneficiariesNat : {
-            type : "text"
-        }, 
-
-        ProjectTeamOverview : {
-            type : "text"
-        }, 
-
-        Project3YearPlan : {
-            type : "text"
-        }, 
-
-        ProjectTrainingPlan : {
-            type : "text"
-        }, 
-
-        FundRaisingPlan : {
-            type : "text"
-        }, 
+    "EstimatedYearlyBudgetMillion" : {
+        type : "string",
+        size : 10
+    }, 
 
 
 
@@ -289,8 +302,11 @@ module.exports = {
             }
         }
 
-    }, 
 
+  },
+
+
+  
 
     /**
      * @function Populate

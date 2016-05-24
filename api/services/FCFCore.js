@@ -120,6 +120,10 @@ module.exports= {
                     return path.join(process.cwd(), 'assets', 'data', 'fcf', 'images', 'activities', name)
                 },
 
+                avatars: function(name) {
+                    return path.join(process.cwd(), 'assets', 'data', 'fcf', 'images', 'avatars', name)
+                },
+
                 temp: function(name) {
 
                     return path.join(process.cwd(), 'assets', 'data', 'fcf', 'images', 'temp', name)
@@ -201,6 +205,7 @@ AD.log('... person for guid:', guid);
                             AD.log('... *** no person found for IDPerson:'+personID);
                         }
                         dfd.resolve(person);
+                        return null;
                     })
                     .catch(function(err){
                         AD.log.error('... error: FCFPerson.findOne() failed:', err);
@@ -208,6 +213,7 @@ AD.log('... person for guid:', guid);
                     })
                     
                 }
+                return null;
             })
             .catch(function(err) {
                 AD.log.error('... error: GUID2Person.find() failed:', err);
