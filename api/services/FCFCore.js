@@ -210,6 +210,7 @@ AD.log('... person for guid:', guid);
                     .catch(function(err){
                         AD.log.error('... error: FCFPerson.findOne() failed:', err);
                         dfd.reject(err);
+                        return null;
                     })
                     
                 }
@@ -218,6 +219,7 @@ AD.log('... person for guid:', guid);
             .catch(function(err) {
                 AD.log.error('... error: GUID2Person.find() failed:', err);
                 dfd.reject(err);
+                return null;
             })
 
             return dfd;
