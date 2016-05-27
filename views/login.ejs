@@ -6,6 +6,11 @@
 <link href="/styles/login-fcf.css" rel="stylesheet" />
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="/OpsPortal/login-fcf.js" defer></script>
+
+<!-- Custom Theme for FCF project -->
+<link href="/OpsPortal/opsportal-theme-fcf.css" rel="stylesheet" />  
+<link href="/OpsPortal/login-fcf.css" rel="stylesheet" />  
 
 <% if (authErrMessage) { %>
     <div id="login-message" class="alert alert-warning alert-dismissible" role="alert">
@@ -19,13 +24,13 @@
 	<div class="op-container op-masthead nopadLR nopadBotm off-botm20  ">
 		<div class="row op-container logo">
 			<div class="col-lg-12">
-				<p class="icon-title"><img src="/images/FCFCore/fcf-logo.jpg" class="img"/><span translate=1>Adroit Login</span></p>
+				<p class="icon-title"><img src="/images/FCFCore/fcf-logo.jpg" style="margin-left: 20px;" class="img"/><span translate=1>Adroit Login</span></p>
 			</div>				
 		</div>
 		<div class="bordergray"></div>
 		<div class="row">
 				<ul class="op-list">
-					<li><a form-show="login" href="#login" translate=1>Login</a></li>
+					<li><a form-show="login" href="#login" class="selected" translate=1>Login</a></li>
 				    <% if (canRegister) { %>
 					<li><a form-show="signup" href="#singup" translate=1>Sign up</a></li>
 					<% } %>
@@ -37,23 +42,23 @@
 	<!--Log in-->
 	<div class="op-container form-display login">
 		<div class="op-container off-top20">
-			<p translate="1">Enter your username and password <strong>to login</strong></p>
+			<p style="text-align:center" translate="1">Enter your username and password <strong>to login</strong></p>
 		</div>
 		<div class="op-contianer padding10 off-top20">
 			<form accept-charset="utf-8" method="post" action="/site/login" class="simform">
 				<input type="hidden" name="_csrf" value="<%= _csrf %>">
 				<div class="form-group">
 					<label class="string optional" for="user-name" translate="1" >Username</label>
-					<input class="string optional" maxlength="255" id="user-name" placeholder="Username" type="text" size="50" name="username" />
+					<input class="string optional form-control" maxlength="255" id="user-name" placeholder="Username" type="text" size="50" name="username" />
 				</div>
 				<div class="form-group">
 					<label class="string optional" for="user-pw" translate=1>Password</label>
-					<input class="string optional" maxlength="255" id="user-pw" placeholder="Password" type="password" size="255" name="password" />
+					<input class="string optional form-control" maxlength="255" id="user-pw" placeholder="Password" type="password" size="255" name="password" />
 				</div>
 
 				<div class="row off-top10">
 					<div class="col-lg-6 align-center"><a class="special pull-left" role="link" href="#" translate=1>Forgot your password?</a></div>
-					<div class="col-lg-6 align-center"><button class="sumbit" type="submit" translate=1>Log In</button></div>			
+					<div class="col-lg-6 align-center"><button type="submit" class="btn  btn-primary op-btn pull-right" translate=1>Log In</button></div>			
 				</div>
 
 			</form>			
