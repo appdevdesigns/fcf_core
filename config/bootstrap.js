@@ -17,73 +17,84 @@ module.exports = function (cb) {
 
     ADCore.queue.subscribe('siteuser.created', function(message, data) {
 
-    	var user = data.user;
+    	if ((sails.config.fcfcore)
+    		&& (sails.config.fcfcore.autoLinkUsers)) {
 
-    	AD.log('<green>... FCF:</green> checking new user to see if we can find a match with FCF Persons');
-    	AD.log('<green>... FCF:</green> new user:'+ user.username);
-    	
 
-		// check to see if we can make a link between the new siteuser 
-		// and one of our people.
-		GUID2Person.findOne({ guid: user.guid })
-		.populate('person')
-		.then(function(entry){
+	    	var user = data.user;
 
-			if (entry) {
-				// then this data.user.guid ALREADY has an entry in guid2person
-				// which really shouldn't happen!
-				ADCore.error.log('Error: new user [guid:'+user.guid+'] already found in GUID2Person!', {
-					data:user,
-					guid2person:entry
-				});
+	    	AD.log('<green>... FCF:</green> checking new user to see if we can find a match with FCF Persons');
+	    	AD.log('<green>... FCF:</green> new user:'+ user.username);
+	    	
 
-			} else {
+			// check to see if we can make a link between the new siteuser 
+			// and one of our people.
+			GUID2Person.findOne({ guid: user.guid })
+			.populate('person')
+			.then(function(entry){
 
-				// not found (good!)
-				var cond = { "e-mail address" : user.email };
-				FCFPerson.find(cond)
-				.then(function(list){
-					if (list.length == 0) {
-						AD.log('... no FCFPerson found for new user with email: '+user.email);
-					} else {
+				if (entry) {
+					// then this data.user.guid ALREADY has an entry in guid2person
+					// which really shouldn't happen!
+					ADCore.error.log('Error: new user [guid:'+user.guid+'] already found in GUID2Person!', {
+						data:user,
+						guid2person:entry
+					});
 
-						if (list.length > 1) {
+				} else {
 
-							AD.log('... found '+list.length+' matches in FCFPerson for new user with email: '+user.email);
+					// not found (good!)
+					var cond = { "CMDetails" : user.email, "IDPerson":{ "!": null } };
+					FCFCMDetails.find(cond)
+					.then(function(list){
+						if (list.length == 0) {
+							AD.log('... no FCFCMDetails found for new user with email: '+user.email);
 						} else {
 
-							//just 1 match!
-							var pid = list[0].IDPerson;
-							var g2p = { guid: user.guid, person:pid };
-							GUID2Person.create(g2p)
-							.then(function(newEntry){
-								AD.log('... created guid2person for new user: '+user.username+' -> '+pid );
-								return null;
-							})
-							.catch(function(err){
-								ADCore.error.log('fcf_core: Error creating new guid2person entry', {
-									error:err,
-									data: g2p
-								});
-								return null;
-							})
-						}
-					}
-					return null;
-				})
-				.catch(function(err){
-					ADCore.error.log('fcf_core: Error looking up FCFPerson', {
-						error:err,
-						cond: cond
-					});
-					return null;
-				})
-			}
+							if (list.length > 1) {
 
-			return null;
-		})
+								AD.log('... found '+list.length+' matches in FCFCMDetails for new user with email: '+user.email);
+	console.log('... list:', list);
+	/// LEFT OFF HERE:
+	//  do we just select the 1st entry, or skip since we don't actually know which person this is?
+
+							} else {
+
+								//just 1 match!
+								var pid = list[0].IDPerson;
+								var g2p = { guid: user.guid, person:pid };
+								GUID2Person.create(g2p)
+								.then(function(newEntry){
+									AD.log('... created guid2person for new user: '+user.username+' -> '+pid );
+									return null;
+								})
+								.catch(function(err){
+									ADCore.error.log('fcf_core: Error creating new guid2person entry', {
+										error:err,
+										data: g2p
+									});
+									return null;
+								})
+							}
+						}
+						return null;
+					})
+					.catch(function(err){
+						ADCore.error.log('fcf_core: Error looking up FCFCMDetails', {
+							error:err,
+							cond: cond
+						});
+						return null;
+					})
+				}
+
+				return null;
+			});
+
+		}
 
     });
+
 
 
 //     ADCore.queue.subscribe('siteuser.updated', function(message, data) {
