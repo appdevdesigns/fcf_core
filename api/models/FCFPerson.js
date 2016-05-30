@@ -743,6 +743,12 @@ module.exports = {
 
 // APPDEV Added here:
 
+    cmdetails:{
+        collection:'fcfcmdetails',
+        via: 'IDPerson'
+    },
+    
+
     taggedInImages: {
         collection:'FCFActivityImages',
         via:'taggedPeople'
