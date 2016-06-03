@@ -1,6 +1,6 @@
 {
   "name": "fcf_core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "(plugin) An OpsTool plugin that contains all the core models and shared services for the FCF project",
   "main": "module.js",
   "directories": {
