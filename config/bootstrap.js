@@ -54,9 +54,9 @@ module.exports = function (cb) {
 							if (list.length > 1) {
 
 								AD.log('... found '+list.length+' matches in FCFCMDetails for new user with email: '+user.email);
-	console.log('... list:', list);
-	/// LEFT OFF HERE:
-	//  do we just select the 1st entry, or skip since we don't actually know which person this is?
+console.log('... list:', list);
+/// LEFT OFF HERE:
+//  do we just select the 1st entry, or skip since we don't actually know which person this is?
 
 							} else {
 
