@@ -57,6 +57,7 @@ module.exports = {
          * convert our .image from it's temp value to 
          * to a properly formatted value.
          *
+         * proper format: [activity.id]_[image.id]_[uuid](_[scaled])
          *  
          */
         toSavedFileName:function( newName ){
@@ -66,10 +67,14 @@ module.exports = {
             if (name) {
                 var parts = name.split('_');
                 if (parts.length < 2) {
-                    name = [this.activity, '_', this.id, '_', name].join('');
+                    name = [this.activity, this.id,  name].join('_');
                 } else {
                     // reconfigure existing name properly
-                    name = [this.activity, '_', this.id, '_', parts.pop()].join('');
+                    var savedName = [this.activity, this.id];
+                    parts.forEach(function(p){
+                        savedName.push(p);
+                    })
+                    name = savedName.join('_');
                 }
                 this.image = name
             }
