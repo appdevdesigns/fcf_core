@@ -124,6 +124,20 @@ module.exports= {
                     return path.join(process.cwd(), 'assets', 'data', 'fcf', 'images', 'avatars', name)
                 },
 
+                scaled: function(name) {
+
+                    var pathParts = name.split(path.sep);
+                    var fileName = pathParts.pop();
+
+                    var sParts = fileName.split('.');
+                    sParts[0] += '_scaled';
+                    var scaledTempName = sParts.join('.');
+
+                    
+                    pathParts.push(scaledTempName);
+                    return pathParts.join(path.sep);
+                },
+
                 temp: function(name) {
 
                     return path.join(process.cwd(), 'assets', 'data', 'fcf', 'images', 'temp', name)
