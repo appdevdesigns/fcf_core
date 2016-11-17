@@ -23,7 +23,8 @@ module.exports = {
 
     "IDMinistry" : {
         type : "integer",
-        size : 11
+        size : 11,
+        primaryKey : true                   // <<---- Appdev Addition
     }, 
 
     // "IDProject" : {                  // <<---- Appdev: updated below

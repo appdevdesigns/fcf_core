@@ -13,9 +13,9 @@ module.exports = {
   tableName:"tblAddresses",
   autoCreatedAt:false,
   autoUpdatedAt:false,
-//   autoPK:false,
-//   migrate:'safe',  // don't update the tables!
-migrate:'alter',
+  autoPK:false,
+  migrate:'safe',  // don't update the tables!
+// migrate:'alter',
 
   connection:"fcf",
 
@@ -23,10 +23,10 @@ migrate:'alter',
 
   attributes: {
 
-    "ID" : {
-        type : "integer",
-        size : 11
-    }, 
+    // "ID" : {                         // <<---- Appdev : use ours below
+    //     type : "integer",
+    //     size : 11,
+    // }, 
 
     IDPerson : {                        // <<---- Appdev Update
         // type : "integer",
@@ -149,7 +149,8 @@ migrate:'alter',
         type : "integer",
         size : 10,
         primaryKey : true,
-        autoIncrement : true
+        autoIncrement : true,
+        columnName:'ID'
     }
 
   }
