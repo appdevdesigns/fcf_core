@@ -22,7 +22,12 @@ module.exports = {
 
   attributes: {
 
-    "IDPerson" : {
+    "IDCMDetail" : {
+        type : "integer",
+        size : 11
+    }, 
+
+    "IDPerson" : {              // <<---- Appdev Update
         // type : "integer",
         // size : 10
         model:"fcfperson"

@@ -24,18 +24,18 @@ module.exports = {
 
     "IDPerson" : {
         type : "integer",
-        size : 4
+        size : 11
     }, 
 
     "IDService" : {
         type : "integer",
-        size : 4,
-        primaryKey : true
+        size : 11,
+        primaryKey : true                   // <<---- Appdev Addition
     }, 
 
     "codeServiceStatus" : {
         type : "string",
-        size : 1
+        size : 5
     }, 
 
     "IDProject" : {
@@ -45,37 +45,33 @@ module.exports = {
 
     "IDMinistry" : {
         type : "integer",
-        size : 3
+        size : 11
     }, 
 
     "DateStartHelps" : {
-        type : "string",
-        size : 10
+        type : "datetime"
     }, 
 
     "DateFinishHelps" : {
-        type : "string",
-        size : 10
+        type : "datetime"
     }, 
 
     "MonthlyCommitmentThai" : {
         type : "string",
-        size : 92
+        size : 100
     }, 
 
     "MonthlyCommitmentEng" : {
         type : "string",
-        size : 10
+        size : 100
     }, 
 
     "AreasOfHelp" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "AmtTime" : {
-        // type : "?decimal?",
-        // size : 3,1
         type : "float"
     }, 
 
@@ -86,12 +82,12 @@ module.exports = {
 
     "WorkAddressThai" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "WorkAddressEng" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
 

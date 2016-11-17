@@ -13,9 +13,9 @@ module.exports = {
   tableName:"tblAddresses",
   autoCreatedAt:false,
   autoUpdatedAt:false,
-//   autoPK:false,
-//   migrate:'safe',  // don't update the tables!
-migrate:'alter',
+  autoPK:false,
+  migrate:'safe',  // don't update the tables!
+// migrate:'alter',
 
   connection:"fcf",
 
@@ -23,7 +23,12 @@ migrate:'alter',
 
   attributes: {
 
-    IDPerson : {
+    // "ID" : {                         // <<---- Appdev : use ours below
+    //     type : "integer",
+    //     size : 11,
+    // }, 
+
+    IDPerson : {                        // <<---- Appdev Update
         // type : "integer",
         // size : 4,
         // primaryKey : true
@@ -31,68 +36,68 @@ migrate:'alter',
     }, 
 
     "IDFamily" : {
-        type : "string",
-        size : 10
+        type : "integer",
+        size : 11
     }, 
 
     "IDGroup" : {
         type : "string",
-        size : 3
+        size : 10
     }, 
 
     "IDProject" : {
-        type : "integer",
-        size : 11
+        type : "string",
+        size : 5
     }, 
 
     "IDMinistry" : {
-        type : "string",
-        size : 5
+        type : "integer",
+        size : 11
     }, 
 
     "codeAddressType" : {
         type : "string",
-        size : 5
+        size : 4
     }, 
 
     "flgIsLocalAddress" : {
-        type : "string",
-        size : 5
+        type : "integer",
+        size : 1
     }, 
 
     "Address1" : {
         type : "string",
-        size : 48
+        size : 50
     }, 
 
     "Address2" : {
         type : "string",
-        size : 27
+        size : 50
     }, 
 
     "Address1Thai" : {
         type : "string",
-        size : 84
+        size : 50
     }, 
 
     "Address2Thai" : {
         type : "string",
-        size : 65
+        size : 50
     }, 
 
     "IDMuubahn" : {
-        type : "integer",
-        size : 11
+        type : "string",
+        size : 50
     }, 
 
     "Neighborhood" : {
         type : "string",
-        size : 14
+        size : 50
     }, 
 
     "NeighborhoodThai" : {
         type : "string",
-        size : 87
+        size : 50
     }, 
 
     "IDProvince" : {
@@ -102,17 +107,17 @@ migrate:'alter',
 
     "ProvState" : {
         type : "string",
-        size : 27
+        size : 50
     }, 
 
     "IDAmphur" : {
         type : "string",
-        size : 15
+        size : 4
     }, 
 
     "AmpCity" : {
         type : "string",
-        size : 42
+        size : 30
     }, 
 
     "IDTambon" : {
@@ -122,7 +127,7 @@ migrate:'alter',
 
     "TamArea" : {
         type : "string",
-        size : 9
+        size : 30
     }, 
 
     "Zip" : {
@@ -132,21 +137,21 @@ migrate:'alter',
 
     "Country" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "ManyPlotData" : {
-        type : "string",
-        size : 10
+        type : "mediumtext"
     }, 
 
-    "id" : {
+
+    "id" : {                            // <<---- Appdev Update
         type : "integer",
         size : 10,
         primaryKey : true,
-        autoIncrement : true
+        autoIncrement : true,
+        columnName:'ID'
     }
-
 
   }
 };

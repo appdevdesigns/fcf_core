@@ -22,8 +22,8 @@ migrate:'alter',
 
     "IDObjective" : {
         type : "integer",
-        size : 10,
-        primaryKey : true,
+        size : 11,
+        primaryKey : true,              // <<--- Appdev Additions
         autoIncrement : true
     }, 
 
@@ -50,8 +50,35 @@ migrate:'alter',
     "ObjectiveDescEng" : {
         type : "string",
         size : 250
-    },
+    }, 
 
+    "IDObjectiveParent" : {
+        type : "integer",
+        size : 11
+    }, 
+
+    "GrpObjTag" : {
+        type : "string",
+        size : 5
+    }, 
+
+    "ObjTag" : {
+        type : "string",
+        size : 15
+    }, 
+
+    "HeartObjectiveDescThai" : {
+        type : "string",
+        size : 250
+    }, 
+
+    "HeartObjectiveDescEng" : {
+        type : "string",
+        size : 250
+    }, 
+
+
+//// APPDEV ADDITIONS: 
 
     activities: {
       collection:'FCFActivity',
@@ -75,4 +102,3 @@ migrate:'alter',
 
   }
 };
-

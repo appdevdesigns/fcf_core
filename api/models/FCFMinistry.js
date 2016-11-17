@@ -18,65 +18,65 @@ module.exports = {
     connection:"fcf",
 
 
-    attributes: {
 
-        "IDMinistry" : {
-            type : "integer",
-            size : 3,
-            primaryKey:true
-        }, 
+  attributes: {
 
-        "IDProject" : {
-            type : "string",
-            size : 5
-        }, 
+    "IDMinistry" : {
+        type : "integer",
+        size : 11,
+        primaryKey : true                   // <<---- Appdev Addition
+    }, 
 
-        "codeMinistryStatus" : {
-            type : "string",
-            size : 1
-        }, 
+    // "IDProject" : {                  // <<---- Appdev: updated below
+    //     type : "string",
+    //     size : 5
+    // }, 
 
-        "NameMinistryNat" : {
-            type : "string",
-            size : 26
-        }, 
+    "codeMinistryStatus" : {
+        type : "string",
+        size : 5
+    }, 
 
-        "NameMinistryEng" : {
-            type : "string",
-            size : 42
-        }, 
+    "NameMinistryNat" : {
+        type : "string",
+        size : 50
+    }, 
 
-        "DateMinistryStarted" : {
-            type : "string",
-            size : 10
-        }, 
+    "NameMinistryEng" : {
+        type : "string",
+        size : 50
+    }, 
 
-        "DateMinistryEnded" : {
-            type : "string",
-            size : 10
-        }, 
+    "DateMinistryStarted" : {
+        type : "datetime"
+    }, 
+
+    "DateMinistryEnded" : {
+        type : "datetime"
+    }, 
 
 //// TODO: make this associated to FCFPerson!
-        "IDPersonResponsible" : {
-            type : "integer",
-            size : 3
-        }, 
+    "IDPersonResponsible" : {
+        type : "integer",
+        size : 11
+    }, 
 
-        "WorkAddressThai" : {
-            type : "string",
-            size : 48
-        }, 
+    "WorkAddressThai" : {
+        type : "string",
+        size : 50
+    }, 
 
-        "WorkAddressEng" : {
-            type : "string",
-            size : 10
-        }, 
+    "WorkAddressEng" : {
+        type : "string",
+        size : 50
+    }, 
 
-        "MinistryDisplayName" : {
-            type : "string",
-            size : 17
-        }, 
+    "MinistryDisplayName" : {
+        type : "string",
+        size : 243
+    }, 
 
+/// APPDEV UPDATE HERE:
 
         // @hasOne Project (FCFProject)
         IDProject:{
