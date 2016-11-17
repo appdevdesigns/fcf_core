@@ -25,21 +25,22 @@ module.exports = {
     "IDProject" : {
         type : "string",
         size : 5,
-        primaryKey : true
+
+        primaryKey : true               // <<<--- Appdev Update
     }, 
 
     "IDGroup" : {
         type : "string",
-        size : 4
+        size : 10
     }, 
 
     "codeProjectStatus" : {
         type : "string",
-        size : 2
+        size : 5
     }, 
 
     "flgIsCCFProject" : {
-        type : "string",
+        type : "integer",
         size : 1
     }, 
 
@@ -50,27 +51,27 @@ module.exports = {
 
     "IDPersonLeading" : {
         type : "integer",
-        size : 3
+        size : 11
     }, 
 
     "LeaderLookUp" : {
-        type : "string",
-        size : 10
+        type : "integer",
+        size : 11
     }, 
 
     "flgAttendsMonthlyMeetings" : {
-        type : "string",
+        type : "integer",
         size : 1
     }, 
 
     "ProjectNameNat" : {
         type : "string",
-        size : 107
+        size : 100
     }, 
 
     "ProjectNameEng" : {
         type : "string",
-        size : 60
+        size : 100
     }, 
 
     "ProjectNameNickThai" : {
@@ -80,210 +81,186 @@ module.exports = {
 
     "ProjectNameNickEng" : {
         type : "string",
-        size : 10
+        size : 30
     }, 
 
     "ProjectDescriptionEng" : {
-        type : "string",
-        size : 1382
+        type : "mediumtext"
     }, 
 
     "ProjectDescriptionNat" : {
-        type : "string",
-        size : 10
+        type : "mediumtext"
     }, 
 
     "ProjectRationalNat" : {
-        type : "string",
-        size : 1112
+        type : "mediumtext"
     }, 
 
     "ProjectRationalEng" : {
-        type : "string",
-        size : 662
+        type : "mediumtext"
     }, 
 
     "ProjectObjectivesNat" : {
-        type : "string",
-        size : 2324
+        type : "mediumtext"
     }, 
 
     "ProjectObjectivesEng" : {
-        type : "string",
-        size : 911
+        type : "mediumtext"
     }, 
 
     "ProjectOperationPlanNat" : {
-        type : "string",
-        size : 1260
+        type : "mediumtext"
     }, 
 
     "ProjectOperationPlanEng" : {
-        type : "string",
-        size : 1525
+        type : "mediumtext"
     }, 
 
     "ProjectPlan" : {
-        type : "string",
-        size : 10
+        type : "mediumtext"
     }, 
 
     "ProjectDateStart" : {
-        type : "string",
-        size : 10
+        type : "datetime"
     }, 
 
     "ProjectDateEnd" : {
-        type : "string",
-        size : 9
+        type : "datetime"
     }, 
 
     "BudgetSummary" : {
-        type : "string",
-        size : 19
+        type : "mediumtext"
     }, 
 
     "ProjectEvaluationEng" : {
-        type : "string",
-        size : 372
+        type : "mediumtext"
     }, 
 
     "ProjectEvaluationNat" : {
-        type : "string",
-        size : 936
+        type : "mediumtext"
     }, 
 
     "BenefitToSocietyNat" : {
-        type : "string",
-        size : 934
+        type : "mediumtext"
     }, 
 
     "BenefitToSocietyEng" : {
-        type : "string",
-        size : 774
+        type : "mediumtext"
     }, 
 
     "flgIncludeInDirectory" : {
-        type : "string",
-        size : 6
+        type : "integer",
+        size : 1
     }, 
 
     "flgIsPartOfCostShareSystem" : {
-        type : "string",
-        size : 40
+        type : "integer",
+        size : 1
     }, 
 
     "CostShareAmountPrj" : {
-        type : "string",
-        size : 371
+        type : "integer",
+        size : 11
     }, 
 
     "CostShareAmountWaived" : {
-        type : "string",
-        size : 371
+        type : "integer",
+        size : 11
     }, 
 
     "CostShareAmountDue" : {
         type : "integer",
-        size : 4
+        size : 11
     }, 
 
     "CostShareAcctIDPrj" : {
-        type : "integer",
+        type : "string",
         size : 6
     }, 
 
     "CostShareAcctIDVol" : {
         type : "string",
-        size : 41
+        size : 6
     }, 
 
     "CostShareAmountPrjNext" : {
-        type : "string",
-        size : 437
+        type : "integer",
+        size : 11
     }, 
 
     "CostShareAmountWaivedNext" : {
-        type : "string",
-        size : 364
+        type : "integer",
+        size : 11
     }, 
 
     "ProjectContext" : {
-        type : "string",
-        size : 10
+        type : "mediumtext"
     }, 
 
     "ProjectVision" : {
         type : "string",
-        size : 10
+        size : 250
     }, 
 
     "ProjectGuidingPrincipels" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "ProjectMissionStatesment" : {
         type : "string",
-        size : 10
+        size : 250
     }, 
 
     "ProjectFocus" : {
         type : "string",
-        size : 10
+        size : 250
     }, 
 
     "ProjectTransformationStatement" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "ProjectTargetBeneficiariesEng" : {
-        type : "string",
-        size : 10
+        type : "mediumtext"
     }, 
 
     "ProjectTargetBeneficiariesNat" : {
-        type : "string",
-        size : 10
+        type : "mediumtext"
     }, 
 
     "ProjectTeamOverview" : {
-        type : "string",
-        size : 10
+        type : "mediumtext"
     }, 
 
     "Project3YearPlan" : {
-        type : "string",
-        size : 10
+        type : "mediumtext"
     }, 
 
     "ProjectTrainingPlan" : {
-        type : "string",
-        size : 10
+        type : "mediumtext"
     }, 
 
     "FundRaisingPlan" : {
-        type : "string",
-        size : 10
+        type : "mediumtext"
     }, 
 
     "MemoCostShareIssues" : {
-        type : "string",
-        size : 10
+        type : "mediumtext"
     }, 
 
     "Visa Letter Statement" : {
-        type : "string",
-        size : 10
+        type : "mediumtext"
     }, 
 
     "EstimatedYearlyBudgetMillion" : {
-        type : "string",
-        size : 10
+        type : "integer",
+        size : 11
     }, 
 
 
+//// APPDEV UPDATES:
 
         teams: {
             collection:'FCFMinistry',

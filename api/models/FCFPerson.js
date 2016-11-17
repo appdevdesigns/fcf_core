@@ -26,27 +26,37 @@ module.exports = {
 
     "IDPerson" : {
         type : "integer",
-        size : 4,
-        primaryKey : true
+        size : 11,
+        primaryKey : true           // <--- update this when migrating data.
     }, 
 
     "flgNewImportLastBatch" : {
-        type : "string",
+        type : "integer",
         size : 1
     }, 
 
     "flgSelectMe" : {
-        type : "string",
+        type : "integer",
         size : 1
     }, 
 
     "SortNo" : {
         type : "integer",
-        size : 3
+        size : 6
     }, 
 
     "flgIsFCFThaiStaff" : {
-        type : "string",
+        type : "integer",
+        size : 1
+    }, 
+
+    "flgUpdatedFromApplication" : {
+        type : "integer",
+        size : 1
+    }, 
+
+    "flgUpdatedFromLume" : {
+        type : "integer",
         size : 1
     }, 
 
@@ -57,12 +67,12 @@ module.exports = {
 
     "codeWorkPermitPhase" : {
         type : "string",
-        size : 3
+        size : 5
     }, 
 
     "codeVisaPhase" : {
         type : "string",
-        size : 3
+        size : 5
     }, 
 
     "codeVisaType" : {
@@ -72,7 +82,7 @@ module.exports = {
 
     "codeVisaCategory" : {
         type : "string",
-        size : 4
+        size : 5
     }, 
 
     "IDProjectMain" : {
@@ -82,7 +92,12 @@ module.exports = {
 
     "IDFamily" : {
         type : "integer",
-        size : 3
+        size : 11
+    }, 
+
+    "flgIsHeadOfFamilyUnit" : {
+        type : "integer",
+        size : 1
     }, 
 
     "codeFamilyRelationship" : {
@@ -91,98 +106,97 @@ module.exports = {
     }, 
 
     "flgIsThai" : {
-        type : "string",
+        type : "integer",
         size : 1
     }, 
 
     "DateBirth" : {
-        type : "string",
-        size : 11
+        type : "datetime"
     }, 
 
     "NameLastEng" : {
         type : "string",
-        size : 20
+        size : 35
     }, 
 
     "NameFirstEng" : {
         type : "string",
-        size : 22
+        size : 25
     }, 
 
     "NamePreferredEng" : {
         type : "string",
-        size : 12
+        size : 15
     }, 
 
     "NameMiddleEng" : {
         type : "string",
-        size : 26
+        size : 25
     }, 
 
     "NameTitleEng" : {
         type : "string",
-        size : 14
+        size : 15
     }, 
 
     "NameTitleThai" : {
         type : "string",
-        size : 39
+        size : 25
     }, 
 
     "NameFirstThai" : {
         type : "string",
-        size : 36
+        size : 35
     }, 
 
     "NameMiddleThai" : {
         type : "string",
-        size : 58
+        size : 25
     }, 
 
     "NameLastThai" : {
         type : "string",
-        size : 58
+        size : 35
     }, 
 
     "NamePreferredThai" : {
         type : "string",
-        size : 37
+        size : 15
     }, 
 
     "NamePersonFLEng" : {
         type : "string",
-        size : 30
+        size : 243
     }, 
 
     "NamePersonLFEng" : {
         type : "string",
-        size : 31
+        size : 243
     }, 
 
     "NamePersonFMLEng" : {
         type : "string",
-        size : 57
+        size : 243
     }, 
 
     "NamePersonFLThai" : {
         type : "string",
-        size : 77
+        size : 243
     }, 
 
     "NamePersonLFThai" : {
         type : "string",
-        size : 78
+        size : 243
     }, 
 
     "NamePersonFMLThai" : {
         type : "string",
-        size : 126
+        size : 243
     }, 
 
     "NamePersonThaiPF" : {
         type : "string",
-        size : 63
+        size : 243
     }, 
 
     "codeGender" : {
@@ -192,32 +206,37 @@ module.exports = {
 
     "PlaceOfBirth" : {
         type : "string",
-        size : 30
+        size : 100
     }, 
 
     "codeNationality" : {
         type : "string",
-        size : 13
+        size : 3
+    }, 
+
+    "codeRace" : {
+        type : "string",
+        size : 3
     }, 
 
     "codeMaritalStatus" : {
         type : "string",
-        size : 1
+        size : 2
     }, 
 
     "CollegeDegree" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "codeEducationHighest" : {
         type : "string",
-        size : 8
+        size : 6
     }, 
 
     "EducationSchool" : {
         type : "string",
-        size : 81
+        size : 80
     }, 
 
     "EducationYearGrad" : {
@@ -227,82 +246,96 @@ module.exports = {
 
     "EducationField" : {
         type : "string",
-        size : 92
+        size : 50
     }, 
 
     "EducationCountry" : {
         type : "string",
-        size : 27
+        size : 50
     }, 
 
     "LatestJob" : {
         type : "string",
-        size : 10
+        size : 150
     }, 
 
     "LastJobOccupation" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "LastJobOccupationThai" : {
         type : "string",
-        size : 27
+        size : 50
     }, 
 
     "LastJobLocationName" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "LastJobCountry" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "LastJobPeriodOfEmployment" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "LastJobReasonForResignation" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "JobTitle" : {
         type : "string",
-        size : 137
+        size : 50
     }, 
 
     "JobDescSimple" : {
-        type : "string",
-        size : 745
+        type : "mediumtext"
     }, 
 
     "WorkAddress" : {
         type : "string",
-        size : 16
+        size : 50
+    }, 
+
+    "JobTitleEng" : {
+        type : "string",
+        size : 50
+    }, 
+
+    "JobDescSimpleEng" : {
+        type : "string",
+        size : 255
+    }, 
+
+    "WorkAddressEng" : {
+        type : "string",
+        size : 50
     }, 
 
     "flgDonationWaived" : {
-        type : "string",
+        type : "integer",
         size : 1
     }, 
 
     "IDGroupSending" : {
         type : "string",
-        size : 4
+        size : 10
     }, 
 
     "IDGroupLocalOversite" : {
         type : "string",
-        size : 4
+        size : 10
     }, 
 
     "PPNumber" : {
         type : "string",
-        size : 13
+        size : 25
     }, 
 
     "PPCountryText" : {
@@ -312,222 +345,206 @@ module.exports = {
 
     "codePPCountry" : {
         type : "string",
-        size : 6
+        size : 10
     }, 
 
     "PPIssuedWhere" : {
         type : "string",
-        size : 33
+        size : 50
     }, 
 
     "PPIssuedWhen" : {
-        type : "string",
-        size : 11
+        type : "datetime"
     }, 
 
     "PPDateExpire" : {
-        type : "string",
-        size : 11
+        type : "datetime"
     }, 
 
     "DateReturnFromBeingAway" : {
-        type : "string",
-        size : 10
+        type : "datetime"
     }, 
 
     "DateArrivalTarget" : {
-        type : "string",
-        size : 11
+        type : "datetime"
     }, 
 
     "DateArrived" : {
-        type : "string",
-        size : 11
+        type : "datetime"
     }, 
 
     "ArrivedFrom" : {
         type : "string",
-        size : 3
+        size : 55
     }, 
 
     "ArrivedBy" : {
         type : "string",
-        size : 5
+        size : 55
     }, 
 
     "ArrivalPort" : {
         type : "string",
-        size : 9
+        size : 50
     }, 
 
     "DepartureCardNo" : {
         type : "string",
-        size : 9
+        size : 10
     }, 
 
     "VisaDateFirst90Day" : {
-        type : "string",
-        size : 9
+        type : "datetime"
     }, 
 
     "VisaDateHearResults" : {
-        type : "string",
-        size : 28
+        type : "datetime"
     }, 
 
     "VisaDate1YearLetter" : {
-        type : "string",
-        size : 9
+        type : "datetime"
+    }, 
+
+    "VisaDateIssuedMostRecent" : {
+        type : "datetime"
     }, 
 
     "VisaDateExpire" : {
-        type : "string",
-        size : 254
+        type : "datetime"
     }, 
 
     "codeVisaLength" : {
         type : "string",
-        size : 49
+        size : 1
     }, 
 
     "flgWPIsFCF" : {
-        type : "string",
-        size : 39
+        type : "integer",
+        size : 1
     }, 
 
     "WPIssuedByWhom" : {
         type : "string",
-        size : 153
+        size : 25
     }, 
 
     "WPNumber" : {
         type : "string",
-        size : 255
+        size : 25
     }, 
 
     "WPDateReturned" : {
-        type : "string",
-        size : 31
+        type : "datetime"
     }, 
 
     "WPDateFirstIssued" : {
-        type : "string",
-        size : 127
+        type : "datetime"
     }, 
 
     "WPIssuedDate" : {
-        type : "string",
-        size : 107
+        type : "datetime"
     }, 
 
     "WPLength" : {
-        type : "string",
-        size : 141
+        type : "integer",
+        size : 11
     }, 
 
     "WPExpireDate" : {
-        type : "string",
-        size : 255
+        type : "datetime"
     }, 
 
     "WPProvince" : {
         type : "string",
-        size : 128
+        size : 40
     }, 
 
     "WPProvinceThai" : {
         type : "string",
-        size : 91
+        size : 50
     }, 
 
     "flgWPCanceled" : {
-        type : "string",
-        size : 93
+        type : "integer",
+        size : 1
     }, 
 
     "WPDateCanceled" : {
-        type : "string",
-        size : 255
+        type : "datetime"
     }, 
 
     "codeFieldOffice" : {
         type : "string",
-        size : 255
+        size : 3
     }, 
 
     "LocationEmployedThai" : {
         type : "string",
-        size : 181
+        size : 50
     }, 
 
     "DateDepartTarget" : {
-        type : "string",
-        size : 255
+        type : "datetime"
     }, 
 
     "DateExit" : {
-        type : "string",
-        size : 115
+        type : "datetime"
     }, 
 
     "DateLastCPTraining" : {
-        type : "string",
-        size : 87
+        type : "datetime"
     }, 
 
     "OOTDateDepart" : {
-        type : "string",
-        size : 255
+        type : "datetime"
     }, 
 
     "OOTDateReturn" : {
-        type : "string",
-        size : 83
+        type : "datetime"
     }, 
 
     "OOTNote" : {
         type : "string",
-        size : 535
+        size : 250
     }, 
 
     "flgNoReEntryStamp" : {
-        type : "string",
-        size : 100
+        type : "integer",
+        size : 1
     }, 
 
     "Tel" : {
         type : "string",
-        size : 199
+        size : 25
     }, 
 
     "e-mail address" : {
         type : "string",
-        size : 592
+        size : 100
     }, 
 
     "Note" : {
         type : "string",
-        size : 224
+        size : 255
     }, 
 
     "Status" : {
         type : "string",
-        size : 72
+        size : 255
     }, 
 
     "Project" : {
         type : "string",
-        size : 86
+        size : 255
     }, 
 
     "DateNext90Days" : {
-        type : "string",
-        size : 255
+        type : "datetime"
     }, 
 
     "Work Schedule & Address" : {
         type : "string",
-        size : 538
+        size : 255
     }, 
 
     "codeProjectAppliedFor" : {
@@ -536,208 +553,233 @@ module.exports = {
     }, 
 
     "Total Visas with WP (Including Followers)" : {
-        type : "string",
-        size : 549
+        type : "float"
     }, 
 
     "MemoCostShare" : {
-        type : "string",
-        size : 766
+        type : "mediumtext"
     }, 
 
     "MemoCostShareVol" : {
-        type : "string",
-        size : 105
+        type : "mediumtext"
     }, 
 
     "flgCSOK" : {
-        type : "string",
-        size : 132
+        type : "integer",
+        size : 1
     }, 
 
     "CostShareAssessed" : {
-        type : "string",
-        size : 86
+        type : "integer",
+        size : 11
     }, 
 
     "CostShareWaived" : {
-        type : "string",
-        size : 68
+        type : "integer",
+        size : 11
     }, 
 
     "CostShareDue" : {
-        type : "string",
-        size : 83
+        type : "integer",
+        size : 11
     }, 
 
     "Cost Share Account" : {
         type : "string",
-        size : 93
+        size : 6
     }, 
 
     "CostShareAcctID" : {
         type : "string",
-        size : 71
+        size : 6
     }, 
 
     "codePaymentPlan" : {
         type : "string",
-        size : 92
+        size : 1
     }, 
 
     "codePaymentCycle" : {
         type : "string",
-        size : 62
+        size : 1
     }, 
 
     "PaymentStartMonth" : {
         type : "string",
-        size : 89
+        size : 2
     }, 
 
     "flgIncludeInStaffDirectory" : {
-        type : "string",
-        size : 184
+        type : "integer",
+        size : 1
     }, 
 
     "Organization" : {
         type : "string",
-        size : 209
+        size : 255
     }, 
 
     "NameThaiFull1" : {
         type : "string",
-        size : 185
+        size : 55
     }, 
 
     "PositionThaiStaff" : {
         type : "string",
-        size : 57
+        size : 200
     }, 
 
     "IDThaiGovtCard" : {
         type : "string",
-        size : 49
+        size : 20
+    }, 
+
+    "DateExpireGovtCard" : {
+        type : "datetime"
+    }, 
+
+    "GovtCardIssuedBy" : {
+        type : "string",
+        size : 50
     }, 
 
     "MemoNote" : {
-        type : "string",
-        size : 1804
+        type : "mediumtext"
     }, 
 
     "MailingAddress" : {
         type : "string",
-        size : 39
+        size : 255
     }, 
 
     "PhysicalAddress" : {
         type : "string",
-        size : 66
+        size : 255
     }, 
 
     "LanguageSpoken" : {
         type : "string",
-        size : 79
+        size : 100
     }, 
 
     "Denomination" : {
         type : "string",
-        size : 246
+        size : 55
     }, 
 
     "MinistryContact" : {
         type : "string",
-        size : 40
+        size : 55
     }, 
 
     "BackGroundCheck" : {
-        type : "string",
-        size : 61
+        type : "integer",
+        size : 1
     }, 
 
     "flgUseThisInfoForSA" : {
-        type : "string",
-        size : 22
+        type : "integer",
+        size : 1
     }, 
 
     "SA" : {
         type : "string",
-        size : 21
+        size : 100
     }, 
 
     "SAContact" : {
         type : "string",
-        size : 25
+        size : 55
     }, 
 
     "SAEmail" : {
         type : "string",
-        size : 25
+        size : 55
     }, 
 
     "SAPhone" : {
         type : "string",
-        size : 23
+        size : 55
     }, 
 
     "SAAddress" : {
         type : "string",
-        size : 22
+        size : 255
     }, 
 
     "STTripDetails" : {
         type : "string",
-        size : 6
+        size : 255
     }, 
 
     "isMoreThan15Days" : {
-        type : "string",
-        size : 3
+        type : "integer",
+        size : 1
     }, 
 
     "AppDatestamp" : {
-        type : "string",
-        size : 11
+        type : "datetime"
     }, 
 
     "rptMemoVisa365" : {
-        type : "string",
-        size : 23
+        type : "mediumtext"
     }, 
 
     "xyz-codePersonStatus" : {
         type : "string",
-        size : 32
+        size : 5
     }, 
 
     "flgQrtRptSubmitted" : {
-        type : "string",
-        size : 11
+        type : "integer",
+        size : 1
     }, 
 
     "DateQrtRptSubmitted" : {
-        type : "string",
-        size : 7
+        type : "datetime"
     }, 
 
     "ECF_NameContact" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "ECF_Email" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "ECF_Phone" : {
         type : "string",
-        size : 10
+        size : 50
     }, 
 
     "ECF_Relationship" : {
         type : "string",
-        size : 10
+        size : 50
+    }, 
+
+    "flgProfileChecked" : {
+        type : "integer",
+        size : 1
+    }, 
+
+    "TSDateInterview" : {
+        type : "datetime"
+    }, 
+
+    "TSDateStart" : {
+        type : "datetime"
+    }, 
+
+    "TSYearsOfEmployment" : {
+        type : "integer",
+        size : 6
+    }, 
+
+    "codeMilitaryStatus" : {
+        type : "string",
+        size : 5
     }, 
 
 
