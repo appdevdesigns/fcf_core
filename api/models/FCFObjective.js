@@ -11,8 +11,8 @@ module.exports = {
   autoCreatedAt:false,
   autoUpdatedAt:false,
   autoPK:false,
-  // migrate:'safe',  // don't update the tables!
-migrate:'alter',
+  migrate:'safe',  // don't update the tables!
+// migrate:'alter',
 
   connection:"fcf",
 
@@ -23,8 +23,8 @@ migrate:'alter',
     "IDObjective" : {
         type : "integer",
         size : 11,
-        primaryKey : true,              // <<--- Appdev Additions
-        autoIncrement : true
+        primaryKey : true,          // <<--- Appdev Additions
+        autoIncrement : true        // NOTE: manually add auto_increment to table column
     }, 
 
     "IDGroup" : {
