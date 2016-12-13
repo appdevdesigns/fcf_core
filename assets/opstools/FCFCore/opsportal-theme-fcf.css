@@ -147,7 +147,10 @@ li[role="presentation"] a { background-color: #fff !important; }
 .webix_column>div.webix_row_select {
 	background: #53A3B1 !important;
 }
-
+.webix_view.webix_form {
+	color: #fff;
+	background-color: #3c766a !important;
+}
 
 /* =Colors - RBAC Overrides */
 .panel-default>.panel-heading { background-color:  #1f6b8d !important; }
