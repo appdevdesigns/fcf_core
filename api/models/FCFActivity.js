@@ -124,6 +124,17 @@ module.exports = {
             return FCFActivity;
         }
 
+    },
+
+    beforeValidate: function(valuesToUpdate, cb) {
+
+        if ((valuesToUpdate.date_end == null)
+            || (valuesToUpdate.date_end == '')
+            || (valuesToUpdate.date_end == '0000-00-00')) {
+            delete valuesToUpdate.date_end;
+        }
+
+        cb();
     }
 
 };
