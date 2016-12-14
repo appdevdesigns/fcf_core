@@ -5,9 +5,6 @@
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
-var AD = require('ad-utils');
-var _ = require('lodash');
-
 module.exports = {
 
   tableName:"tblAddresses",
@@ -22,11 +19,6 @@ module.exports = {
 
 
   attributes: {
-
-    // "ID" : {                         // <<---- Appdev : use ours below
-    //     type : "integer",
-    //     size : 11,
-    // }, 
 
     IDPerson : {                        // <<---- Appdev Update
         // type : "integer",
@@ -62,7 +54,7 @@ module.exports = {
 
     "flgIsLocalAddress" : {
         type : "integer",
-        size : 1
+        size : 11
     }, 
 
     "Address1" : {
@@ -144,7 +136,6 @@ module.exports = {
         type : "mediumtext"
     }, 
 
-
     "id" : {                            // <<---- Appdev Update
         type : "integer",
         size : 10,
@@ -152,6 +143,7 @@ module.exports = {
         autoIncrement : true,
         columnName:'ID'
     }
+
 
   }
 };

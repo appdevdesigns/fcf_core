@@ -51,7 +51,7 @@ module.exports = {
     "CMDetails" : {
         type : "string",
         size : 60
-    }
+    }, 
 
 
   }
