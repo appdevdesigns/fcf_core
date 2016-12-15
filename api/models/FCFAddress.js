@@ -93,8 +93,9 @@ module.exports = {
     }, 
 
     "IDProvince" : {
-        type : "string",
-        size : 2
+        model: 'FCFTableProvince'        // <<---- Appdev Update
+        // type : "string",
+        // size : 2
     }, 
 
     "ProvState" : {
