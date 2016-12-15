@@ -93,8 +93,9 @@ module.exports = {
     }, 
 
     "IDProvince" : {
-        type : "string",
-        size : 2
+        model: 'FCFTableProvince'        // <<---- Appdev Update
+        // type : "string",
+        // size : 2
     }, 
 
     "ProvState" : {
@@ -103,8 +104,9 @@ module.exports = {
     }, 
 
     "IDAmphur" : {
-        type : "string",
-        size : 4
+        model: 'FCFTableAmp'        // <<---- Appdev Update
+        // type : "string",
+        // size : 4
     }, 
 
     "AmpCity" : {
@@ -113,8 +115,9 @@ module.exports = {
     }, 
 
     "IDTambon" : {
-        type : "string",
-        size : 6
+        model:'FCFTableTamb'        // <<---- Appdev Update
+        // type : "string",
+        // size : 6
     }, 
 
     "TamArea" : {

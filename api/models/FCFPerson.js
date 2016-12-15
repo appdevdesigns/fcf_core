@@ -210,8 +210,9 @@ module.exports = {
     }, 
 
     "codeNationality" : {
-        type : "string",
-        size : 3
+        model: "FCFCodeNationality"             // <<---- Appdev Update
+        // type : "string",
+        // size : 3
     }, 
 
     "codeRace" : {

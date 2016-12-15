@@ -1,5 +1,5 @@
 /**
- * FCFTableAmp.js
+ * FCFTableProvince.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
@@ -7,7 +7,7 @@
 
 module.exports = {
 
-  tableName:'tblAmp',
+  tableName:'tblProv',
   autoCreatedAt:false,
   autoUpdatedAt:false,
   autoPK:false,
@@ -24,15 +24,10 @@ module.exports = {
         type : "float"
     }, 
 
-    "IDAmp" : {
-        type : "string",
-        size : 4,
-        primaryKey : true       // <<---- Appdev Update 
-    }, 
-
     "IDProv" : {
         type : "string",
-        size : 2
+        size : 2,
+        primaryKey : true       // <<---- Appdev Update
     }, 
 
     "NAME_PRI" : {
