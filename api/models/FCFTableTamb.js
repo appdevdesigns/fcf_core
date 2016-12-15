@@ -25,7 +25,8 @@ module.exports = {
 
     "IDTam" : {
         type : "string",
-        size : 6
+        size : 6,
+        primaryKey : true       // <<---- Appdev Update
     }, 
 
     "IDAmp" : {

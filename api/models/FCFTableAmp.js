@@ -26,7 +26,8 @@ module.exports = {
 
     "IDAmp" : {
         type : "string",
-        size : 4
+        size : 4,
+        primaryKey : true       // <<---- Appdev Update 
     }, 
 
     "IDProv" : {

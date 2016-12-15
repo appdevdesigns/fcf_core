@@ -21,7 +21,8 @@ module.exports = {
 
     "codeNationality" : {
         type : "string",
-        size : 3
+        size : 3,
+        primaryKey : true       // <<---- Appdev Update
     }, 
 
     "CountryDesc" : {
