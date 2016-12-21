@@ -20,6 +20,14 @@ module.exports = {
 
   attributes: {
 
+    "id" : {                            // <<---- Appdev Update
+        type : "integer",
+        size : 10,
+        primaryKey : true,
+        autoIncrement : true,
+        columnName:'ID'
+    },
+
     IDPerson : {                        // <<---- Appdev Update
         // type : "integer",
         // size : 4,
@@ -54,7 +62,7 @@ module.exports = {
 
     "flgIsLocalAddress" : {
         type : "integer",
-        size : 11
+        size : 1
     }, 
 
     "Address1" : {
@@ -137,14 +145,6 @@ module.exports = {
 
     "ManyPlotData" : {
         type : "mediumtext"
-    }, 
-
-    "id" : {                            // <<---- Appdev Update
-        type : "integer",
-        size : 10,
-        primaryKey : true,
-        autoIncrement : true,
-        columnName:'ID'
     }
 
 
