@@ -149,7 +149,7 @@ li[role="presentation"] a { background-color: #fff !important; }
 }
 .webix_view.webix_form {
 	color: #fff;
-	background-color: #3c766a !important;
+	background-color: #3c766a;  /* 2 Feb 2017: removed !important since it was messing up other AppBuilder displays */
 }
 
 /* =Colors - RBAC Overrides */
