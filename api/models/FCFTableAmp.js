@@ -28,7 +28,7 @@ module.exports = {
         type : "string",
         size : 4,
         primaryKey : true       // <<---- Appdev Update 
-    }, 
+    },  
 
     "IDProv" : {
         type : "string",

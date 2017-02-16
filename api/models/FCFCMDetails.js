@@ -31,7 +31,7 @@ module.exports = {
         // type : "integer",
         // size : 10
         model:"fcfperson"
-    }, 
+    },  
 
     "IDGroup" : {
         type : "string",

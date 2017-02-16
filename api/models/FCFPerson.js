@@ -213,7 +213,7 @@ module.exports = {
         model: "FCFCodeNationality"             // <<---- Appdev Update
         // type : "string",
         // size : 3
-    }, 
+    },
 
     "codeRace" : {
         type : "string",

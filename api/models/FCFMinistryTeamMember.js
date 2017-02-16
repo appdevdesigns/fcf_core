@@ -31,7 +31,7 @@ module.exports = {
         type : "integer",
         size : 11,
         primaryKey : true                   // <<---- Appdev Addition
-    }, 
+    },
 
     "codeServiceStatus" : {
         type : "string",

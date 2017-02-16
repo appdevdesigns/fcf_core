@@ -74,7 +74,8 @@ module.exports = {
     "MinistryDisplayName" : {
         type : "string",
         size : 243
-    },  
+    }, 
+
 
 /// APPDEV UPDATE HERE:
 

@@ -28,7 +28,7 @@ module.exports = {
         type : "string",
         size : 2,
         primaryKey : true       // <<---- Appdev Update
-    }, 
+    },
 
     "NAME_PRI" : {
         type : "string",

@@ -28,7 +28,7 @@ module.exports = {
         columnName:'ID'
     },
 
-    IDPerson : {                        // <<---- Appdev Update
+    "IDPerson" : {                        // <<---- Appdev Update
         // type : "integer",
         // size : 4,
         // primaryKey : true
@@ -126,7 +126,7 @@ module.exports = {
         model:'FCFTableTamb'        // <<---- Appdev Update
         // type : "string",
         // size : 6
-    }, 
+    },  
 
     "TamArea" : {
         type : "string",
