@@ -119,15 +119,22 @@ module.exports = {
 
 
             // reduce the taggedPeople to a list of [ids]
-            var taggedPeopleIDs = [];
+            var taggedPeopleIDs = [],
+                taggedPeopleNames = [];
             if (this.taggedPeople) {
                 this.taggedPeople.forEach(function(person){
                     taggedPeopleIDs.push(person.IDPerson);
+
+                    if (person.displayName) {
+                        taggedPeopleNames.push(person.displayName(langCode));
+                    } else {
+                        taggedPeopleNames.push(person.NamePersonFLEng);
+                    }
                 })
             }
             simpleActivity.taggedPeople = taggedPeopleIDs;
-            
-            
+            simpleActivity.taggedPeopleNames = taggedPeopleNames;
+
 
             // reduce uploadedBy => { IDPerson, display_name }
             if (this.uploadedBy) {
