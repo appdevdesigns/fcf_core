@@ -27,6 +27,11 @@ module.exports = {
         autoIncrement : true        // NOTE: manually add auto_increment to table column
     }, 
 
+    "flgIsActive" : {
+        type : "integer",
+        size : 1
+    }, 
+
     "IDGroup" : {
         type : "string",
         size : 10
