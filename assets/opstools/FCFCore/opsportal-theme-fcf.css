@@ -102,6 +102,7 @@ h1, h2, h3, h4, h5 { color: #FFF;}
 
 .op-toggle, .op-modal {
 	border-top-color: rgba(0,0,0,0.1);
+	display: none;
 }
 
 .op-icon i {
