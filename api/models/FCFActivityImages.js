@@ -96,7 +96,7 @@ module.exports = {
 
 
             // copy over the base fields
-            var fields = [ 'id', 'image', 'date', 'activity' ];
+            var fields = [ 'id', 'image', 'date', 'status', 'activity' ];
             var self = this;
             fields.forEach(function(field){
                 simpleActivity[field] = self[field];
