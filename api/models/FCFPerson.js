@@ -90,6 +90,11 @@ module.exports = {
         size : 5
     }, 
 
+    "IDPersonSupervisor" : {
+        type : "integer",
+        size : 11
+    }, 
+
     "IDFamily" : {
         type : "integer",
         size : 11
