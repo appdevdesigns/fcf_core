@@ -23,7 +23,14 @@ var AD = require('ad-utils');
     // now link to our landing Page
     var ourLandingPage = path.join(__dirname, '..', '..', '..', 'views', 'fcf_core', 'landing.ejs');
     AD.log('<yellow>linking</yellow> : views/fcf_core/landing.ejs');
-    fs.symlinkSync(ourLandingPage, pathLanding);
+    try {
+        fs.symlinkSync(ourLandingPage, pathLanding);
+    } catch(e) {
+console.log('... error:', e);
+
+        AD.log('<yellow>!!! '+pathLanding+'  is already there!');
+    }
+    
     AD.log();
 
 
