@@ -498,9 +498,9 @@ ul {padding:0;margin:0}
 	border-radius: 0px !important;
 }
 .op-list {
-    background-color: #bbd3d7;
-    color: #000;
-    border-radius: 20px 0px 20px 20px;
+    background-color: #333;
+    color: #FFF;
+    border-radius: 0px;
 }
 
 .op-widget {
@@ -535,9 +535,9 @@ ul {padding:0;margin:0}
 }
 
 .op-widget-body {
-    background-color: #bbd3d7;
+    background-color: #333;
     color: #000;
-    border-radius: 20px 0px 20px 20px;
+    border-radius: 0px;
 }
 
 .tr-translate-body {
