@@ -788,6 +788,11 @@ module.exports = {
         size : 5
     }, 
 
+    "codeStaffThai" : {
+        type : "string",
+        size : 3
+    }, 
+
 
 // APPDEV Added here:
 
