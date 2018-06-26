@@ -85,10 +85,10 @@ module.exports = {
         size : 5
     }, 
 
-    "IDProjectMain" : {
-        type : "string",
-        size : 5
-    }, 
+    // "IDProjectMain" : {   // <<---- Appdev: updated below : project
+    //     type : "string",
+    //     size : 5
+    // }, 
 
     "IDPersonSupervisor" : {
         type : "integer",
@@ -812,6 +812,13 @@ module.exports = {
         collection:'FCFAddress',
         via: 'IDPerson'
     },
+
+
+    project : {
+        model: "FCFProject"             // <<---- Appdev Update
+    }, 
+
+
 
 
     displayName:function(code) {

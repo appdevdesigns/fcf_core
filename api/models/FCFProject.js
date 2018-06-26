@@ -267,6 +267,11 @@ module.exports = {
             via:'IDProject'
         },
 
+        staffs: {
+            collection:'FCFPerson',
+            via:'project'
+        },
+
 
         displayName:function(code) {
 
