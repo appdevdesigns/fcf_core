@@ -269,7 +269,7 @@ module.exports = {
 
         staffs: {
             collection:'FCFPerson',
-            via:'project'
+            via:'IDProjectMain'
         },
 
 
