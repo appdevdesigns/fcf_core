@@ -258,6 +258,11 @@ module.exports = {
         type : "integer",
         size : 11
     }, 
+    
+    "NameProjectDisplay" : {
+        type : "string",
+        size : 10
+    }, 
 
 
 //// APPDEV UPDATES:
