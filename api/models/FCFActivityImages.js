@@ -114,7 +114,24 @@ module.exports = {
 
             // simple date: yyyy/mm/dd
             if (simpleActivity.date) {
-                simpleActivity.date = simpleActivity.date.toISOString().split('T')[0];
+                var month = simpleActivity.date.getMonth();
+                var date = simpleActivity.date.getDate();
+                var year = simpleActivity.date.getFullYear();
+                
+                // if date is 1-9 add a leading "0"
+                if (date < 10) {
+                    date = "0" + date;
+                }
+                
+                // convert month to 01-12 from 0-11
+                month++;
+                if (month < 10) {
+                    month = "0" + month;
+                }
+                
+                date = year + "-" + month + "-" + date;
+                
+                simpleActivity.date = date;
             }
 
 
