@@ -26,7 +26,7 @@ module.exports = {
 // AD.log('query:', req.query);
 
         var filter = req.query;
-console.log('filter:', filter);
+// console.log('filter:', filter);
 
 		// filter off additional params 
     	// "_cas_retry": "23708552",
@@ -38,7 +38,7 @@ console.log('filter:', filter);
         // what is the current language_code of the User
         var langCode = ADCore.user.current(req).getLanguageCode();
 
-console.log('langCode:', langCode);
+// console.log('langCode:', langCode);
 
 
 		FCFLocation.find(filter)
@@ -47,15 +47,15 @@ console.log('langCode:', langCode);
         .then(function(list){
 
         	flatten(langCode, list);
-console.log('list:', list);
+// console.log('list:', list);
 
 			var sortedList = _.orderBy(list, ['priority', 'name'], ['desc', 'asc']);
-console.log('sortedList:', sortedList);
+// console.log('sortedList:', sortedList);
 
             ADCore.comm.success(res,sortedList);
         }) 
         .catch(function(err){
-console.log(err);
+// console.log(err);
             ADCore.comm.error(res, err);
 
             err._model = 'FCFLocation';
@@ -107,10 +107,10 @@ console.log(err);
         var fields = allFields();
         var reqFields = requiredFields();
 
-console.log('');
-console.log('create():');
-console.log('fields:', fields);
-console.log('requiredFields:', reqFields);
+// console.log('');
+// console.log('create():');
+// console.log('fields:', fields);
+// console.log('requiredFields:', reqFields);
 
 
         var values = {};
@@ -301,7 +301,7 @@ console.log('requiredFields:', reqFields);
 						listRemoved.forEach((l)=>{
 							transCriteria.fcflocation.push(l.id);
 						})
-console.log('... transCriteria:', transCriteria);
+// console.log('... transCriteria:', transCriteria);
 						FCFLocationTrans.destroy(transCriteria)
 						.then((listTRemoved)=>{
 							next();
