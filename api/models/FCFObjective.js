@@ -81,6 +81,14 @@ module.exports = {
         type : "string",
         size : 250
     }, 
+    
+    "DateCreated" : {
+        type : "datetime"
+    }, 
+    
+    "DateDeActivated" : {
+        type : "datetime"
+    }, 
 
 
 //// APPDEV ADDITIONS: 

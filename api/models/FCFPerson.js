@@ -793,6 +793,11 @@ module.exports = {
         type : "string",
         size : 3
     }, 
+    
+    "flgExcludeFromMCExport" : {
+        type : "integer",
+        size : 1
+    },
 
 
 // APPDEV Added here:
