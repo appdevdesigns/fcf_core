@@ -854,7 +854,7 @@ module.exports = {
 
             function(next) {
 // AD.log('   ... FCFMinistryTeamMember.find()');
-                FCFMinistryTeamMember.find({IDPerson:self.IDPerson})
+                FCFMinistryTeamMember.find({IDPerson:self.IDPerson, codeServiceStatus:"S"})
                 .then(function(list){
 
                     list.forEach(function(entry){
@@ -873,7 +873,7 @@ module.exports = {
 
             function(next) {
 // AD.log('   ... FCFMinistry.find()');
-                FCFMinistry.find({IDMinistry:idMinistries})
+                FCFMinistry.find({IDMinistry:idMinistries, codeMinistryStatus:"A"})
                 // .populate('IDProject')
                 .fail(function(err){
                     next(err);
